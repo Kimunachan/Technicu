@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "technicu:tin_ore"
+  },
+  "result": "technicu:tin_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

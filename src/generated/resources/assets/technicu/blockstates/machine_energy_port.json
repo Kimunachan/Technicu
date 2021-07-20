@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "technicu:block/machine_energy_port"
+    }
+  }
+}

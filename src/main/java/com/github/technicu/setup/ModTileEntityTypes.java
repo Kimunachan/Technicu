@@ -1,6 +1,7 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -13,8 +14,7 @@ import java.util.function.Supplier;
 public class ModTileEntityTypes
 {
     //-------------------------
-    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPE = DeferredRegister.create
-            (ForgeRegistries.TILE_ENTITIES, Technicu.MOD_ID);
+    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Technicu.MOD_ID);
     //-------------------------
 
     //public static final RegistryObject<TileEntityType<MetalPressTileEntity>> METAL_PRESS = register("metal_press", MetalPressTileEntity::new, ModBlocks.METAL_PRESS);

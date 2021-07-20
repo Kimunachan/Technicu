@@ -1,5 +1,9 @@
 package com.github.technicu.setup;
 
+import com.github.technicu.Technicu;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.RegistryObject;
+
 public class ModItems
 {
     //public static final RegistryObject<Item> COPPER_INGOT = Registration.ITEMS.register("copper_ingot", () -> new Item(new Item.Properties().tab(Arcadia.MOD_TAB_ITEMS)));

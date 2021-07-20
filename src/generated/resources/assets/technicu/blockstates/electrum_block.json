@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "technicu:block/electrum_block"
+    }
+  }
+}
