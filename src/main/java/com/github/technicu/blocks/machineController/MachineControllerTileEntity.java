@@ -1,7 +1,9 @@
 package com.github.technicu.blocks.machineController;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.recipes.ModSmeltingRecipe;
 import com.github.technicu.setup.ModBlocks;
+import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -12,10 +14,20 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.EnergyStorage;
+import net.minecraftforge.energy.IEnergyStorage;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class MachineControllerTileEntity extends LockableLootTileEntity implements ITickableTileEntity
 {
@@ -230,9 +242,8 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
         return formed;
     }
 
-
     //<editor-fold desc="InventoryStuff">
-    public static int slots = 1;
+    public static int slots = 2;
     public static final int WORK_TIME = 400;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(slots,ItemStack.EMPTY);

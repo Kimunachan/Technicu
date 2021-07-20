@@ -36,10 +36,10 @@ public class MachineControllerBasicContainer extends Container {
         super(ModContainerTypes.MACHINE_CONTROLLER_BASIC.get(), windowId);
         this.tileEntity = tileEntity;
         this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
-        //x,y
 
+        //slot,x,y
         this.addSlot(new Slot((IInventory) tileEntity,0,56,35));
-        this.addSlot(new Slot((IInventory) tileEntity,1,117,35));
+        this.addSlot(new Slot((IInventory) tileEntity,1,116,35));
 
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -80,7 +80,7 @@ public class MachineControllerBasicContainer extends Container {
         if(slot != null && slot.hasItem()){
             ItemStack stack1 = slot.getItem();
             stack = stack1.copy();
-            if(index < 1 &&!this.moveItemStackTo(stack1,MachineControllerTileEntity.slots,this.slots.size(),true)) {
+            if(index < 36 &&!this.moveItemStackTo(stack1,MachineControllerTileEntity.slots,this.slots.size(),true)) {
                 return ItemStack.EMPTY;
             }
             if(!this.moveItemStackTo(stack1,0,MachineControllerTileEntity.slots,false)){
