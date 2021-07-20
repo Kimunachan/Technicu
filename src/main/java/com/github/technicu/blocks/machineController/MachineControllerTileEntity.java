@@ -1,12 +1,23 @@
 package com.github.technicu.blocks.machineController;
 
+import com.github.technicu.Technicu;
 import com.github.technicu.setup.ModBlocks;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
-public class MachineControllerTileEntity extends TileEntity implements ITickableTileEntity
+public class MachineControllerTileEntity extends LockableLootTileEntity implements ITickableTileEntity
 {
     private static boolean formed;
 
@@ -85,7 +96,7 @@ public class MachineControllerTileEntity extends TileEntity implements ITickable
          * c = controller
          * */
 
-        //OPT1
+        //<editor-fold desc="OPT1">
         Block opt1l1b01 = level.getBlockState(getBlockPos().below().north().north().west()).getBlock();
         Block opt1l1b02 = level.getBlockState(getBlockPos().below().north().north()).getBlock();
         Block opt1l1b03 = level.getBlockState(getBlockPos().below().north().north().east()).getBlock();
@@ -112,8 +123,8 @@ public class MachineControllerTileEntity extends TileEntity implements ITickable
         Block opt1l3b07 = level.getBlockState(getBlockPos().above().west()).getBlock();
         Block opt1l3b08 = level.getBlockState(getBlockPos().above()).getBlock();
         Block opt1l3b09 = level.getBlockState(getBlockPos().above().east()).getBlock();
-
-        //OPT2
+        //</editor-fold>
+        //<editor-fold desc="OPT2">
         Block opt2l1b01 = level.getBlockState(getBlockPos().below().east().east().north()).getBlock();
         Block opt2l1b02 = level.getBlockState(getBlockPos().below().east().east()).getBlock();
         Block opt2l1b03 = level.getBlockState(getBlockPos().below().east().east().south()).getBlock();
@@ -140,8 +151,8 @@ public class MachineControllerTileEntity extends TileEntity implements ITickable
         Block opt2l3b07 = level.getBlockState(getBlockPos().above().north()).getBlock();
         Block opt2l3b08 = level.getBlockState(getBlockPos().above()).getBlock();
         Block opt2l3b09 = level.getBlockState(getBlockPos().above().south()).getBlock();
-
-        //OPT3
+        //</editor-fold>
+        //<editor-fold desc="OPT3">
         Block opt3l1b01 = level.getBlockState(getBlockPos().below().south().south().east()).getBlock();
         Block opt3l1b02 = level.getBlockState(getBlockPos().below().south().south()).getBlock();
         Block opt3l1b03 = level.getBlockState(getBlockPos().below().south().south().west()).getBlock();
@@ -168,8 +179,8 @@ public class MachineControllerTileEntity extends TileEntity implements ITickable
         Block opt3l3b07 = level.getBlockState(getBlockPos().above().east()).getBlock();
         Block opt3l3b08 = level.getBlockState(getBlockPos().above()).getBlock();
         Block opt3l3b09 = level.getBlockState(getBlockPos().above().west()).getBlock();
-
-        //OPT4
+        //</editor-fold>
+        //<editor-fold desc="OPT4">
         Block opt4l1b01 = level.getBlockState(getBlockPos().below().west().west().south()).getBlock();
         Block opt4l1b02 = level.getBlockState(getBlockPos().below().west().west()).getBlock();
         Block opt4l1b03 = level.getBlockState(getBlockPos().below().west().west().north()).getBlock();
@@ -196,6 +207,7 @@ public class MachineControllerTileEntity extends TileEntity implements ITickable
         Block opt4l3b07 = level.getBlockState(getBlockPos().above().south()).getBlock();
         Block opt4l3b08 = level.getBlockState(getBlockPos().above()).getBlock();
         Block opt4l3b09 = level.getBlockState(getBlockPos().above().north()).getBlock();
+        //</editor-fold>
 
         boolean opt1 = opt1l1b01.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b02.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b03.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b04.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b05.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b06.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b07.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b08.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l1b09.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b01.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b02.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b03.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b04.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b05.is(ModBlocks.COPPER_BLOCK.get()) && opt1l2b06.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b07.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l2b08.is(ModBlocks.MACHINE_ENERGY_PORT.get()) && opt1l3b01.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b02.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b03.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b04.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b05.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b06.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b07.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b08.is(ModBlocks.MACHINE_BLOCK.get()) && opt1l3b09.is(ModBlocks.MACHINE_BLOCK.get());
         boolean opt2 = opt2l1b01.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b02.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b03.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b04.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b05.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b06.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b07.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b08.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l1b09.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b01.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b02.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b03.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b04.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b05.is(ModBlocks.COPPER_BLOCK.get()) && opt2l2b06.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b07.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l2b08.is(ModBlocks.MACHINE_ENERGY_PORT.get()) && opt2l3b01.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b02.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b03.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b04.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b05.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b06.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b07.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b08.is(ModBlocks.MACHINE_BLOCK.get()) && opt2l3b09.is(ModBlocks.MACHINE_BLOCK.get());
@@ -217,4 +229,57 @@ public class MachineControllerTileEntity extends TileEntity implements ITickable
     {
         return formed;
     }
+
+
+    //<editor-fold desc="InventoryStuff">
+    public static int slots = 1;
+    public static final int WORK_TIME = 400;
+
+    protected NonNullList<ItemStack> items = NonNullList.withSize(slots,ItemStack.EMPTY);
+
+    @Override
+    protected NonNullList<ItemStack> getItems() {
+        return this.items;
+    }
+
+    @Override
+    protected void setItems(NonNullList<ItemStack> itemsIn) {
+        this.items = itemsIn;
+    }
+
+    @Override
+    protected ITextComponent getDefaultName() {
+        return new TranslationTextComponent("container."+ Technicu.MOD_ID + ".multiblock_basic");
+    }
+
+    @Override
+    protected Container createMenu(int id, PlayerInventory playerInventory) {
+        return new MachineControllerBasicContainer(id,playerInventory,this);
+    }
+
+    @Override
+    public int getContainerSize() {
+        return slots;
+    }
+
+    @Override
+    public void load(BlockState state, CompoundNBT nbt) {
+        super.load(state, nbt);
+        this.items = NonNullList.withSize(getContainerSize(),ItemStack.EMPTY);
+        if(!this.tryLoadLootTable(nbt)){
+            ItemStackHelper.loadAllItems(nbt,this.items);
+        }
+
+    }
+
+    @Override
+    public CompoundNBT save(CompoundNBT nbt) {
+        super.save(nbt);
+        if(!this.trySaveLootTable(nbt)){
+            ItemStackHelper.saveAllItems(nbt,this.items);
+        }
+
+        return nbt;
+    }
+    //</editor-fold>
 }

@@ -21,9 +21,9 @@ public class ModItems
     public static final RegistryObject<Item> BRONZE_ROD = Registration.ITEMS.register("bronze_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> COPPER_ROD = Registration.ITEMS.register("copper_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> ELECTRUM_ROD = Registration.ITEMS.register("electrum_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
+    public static final RegistryObject<Item> IRON_ROD = Registration.ITEMS.register("iron_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> NICKEL_ROD = Registration.ITEMS.register("nickel_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> PLATINUM_ROD = Registration.ITEMS.register("platinum_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
-    public static final RegistryObject<Item> IRON_ROD = Registration.ITEMS.register("iron_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> STEEL_ROD = Registration.ITEMS.register("steel_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> TIN_ROD = Registration.ITEMS.register("tin_rod", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
 

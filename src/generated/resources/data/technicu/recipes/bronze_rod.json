@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "technicu:bronze_ingot"
+    }
+  },
+  "result": {
+    "item": "technicu:bronze_rod"
+  }
+}

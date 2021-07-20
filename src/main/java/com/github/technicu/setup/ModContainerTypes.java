@@ -11,7 +11,8 @@ import net.minecraftforge.fml.network.IContainerFactory;
 
 public class ModContainerTypes
 {
-    //public static final RegistryObject<ContainerType<MetalPressContainer>> METAL_PRESS = register("metal_press", MetalPressContainer::new);
+
+    public static final RegistryObject<ContainerType<MachineControllerBasicContainer>> MACHINE_CONTROLLER_BASIC = register("machine_container_basic", MachineControllerBasicContainer::new);
 
     private static <T extends Container> RegistryObject<ContainerType<T>> register(String name, IContainerFactory<T> factory)
     {

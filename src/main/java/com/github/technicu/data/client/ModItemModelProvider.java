@@ -44,6 +44,16 @@ public class ModItemModelProvider extends ItemModelProvider
         builder("platinum_ingot", itemGenerated);
         builder("steel_ingot", itemGenerated);
         builder("tin_ingot", itemGenerated);
+
+        builder("aluminum_rod", itemGenerated);
+        builder("bronze_rod", itemGenerated);
+        builder("copper_rod", itemGenerated);
+        builder("electrum_rod", itemGenerated);
+        builder("iron_rod", itemGenerated);
+        builder("nickel_rod", itemGenerated);
+        builder("platinum_rod", itemGenerated);
+        builder("steel_rod", itemGenerated);
+        builder("tin_rod", itemGenerated);
     }
 
     private ItemModelBuilder builder(String name, ModelFile itemGenerated)
