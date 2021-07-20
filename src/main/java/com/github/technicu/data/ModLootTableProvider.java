@@ -42,7 +42,22 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         protected void addTables()
         {
+            dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
+            dropSelf(ModBlocks.ALUMINUM_ORE.get());
+            dropSelf(ModBlocks.BRONZE_BLOCK.get());
+            dropSelf(ModBlocks.COPPER_BLOCK.get());
+            dropSelf(ModBlocks.COPPER_ORE.get());
+            dropSelf(ModBlocks.ELECTRUM_BLOCK.get());
             dropSelf(ModBlocks.MACHINE_BLOCK.get());
+            dropSelf(ModBlocks.MACHINE_CONTROLLER.get());
+            dropSelf(ModBlocks.MACHINE_ENERGY_PORT.get());
+            dropSelf(ModBlocks.NICKEL_BLOCK.get());
+            dropSelf(ModBlocks.NICKEL_ORE.get());
+            dropSelf(ModBlocks.PLATINUM_BLOCK.get());
+            dropSelf(ModBlocks.PLATINUM_ORE.get());
+            dropSelf(ModBlocks.STEEL_BLOCK.get());
+            dropSelf(ModBlocks.TIN_BLOCK.get());
+            dropSelf(ModBlocks.TIN_ORE.get());
 
             //dropOther(ModBlocks.MACHINE_BLOCK.get(), ModItems.RUBY.get());
 

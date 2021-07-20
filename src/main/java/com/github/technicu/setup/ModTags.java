@@ -12,9 +12,22 @@ public class ModTags
 {
     public static final class Blocks
     {
-        //public static final ITag.INamedTag<Block> ORES_COPPER = forge("ores/copper");
-
-        //public static final ITag<Block> STORAGE_BLOCKS_METAL_PRESS = forge("storage_blocks/metal_press");
+        public static final ITag.INamedTag<Block> ALUMINUM_BLOCK = forge("blocks/aluminum_block");
+        public static final ITag.INamedTag<Block> ALUMINUM_ORE = forge("blocks/aluminum_ore");
+        public static final ITag.INamedTag<Block> BRONZE_BLOCK = forge("blocks/bronze_block");
+        public static final ITag.INamedTag<Block> COPPER_BLOCK = forge("blocks/copper_block");
+        public static final ITag.INamedTag<Block> COPPER_ORE = forge("blocks/copper_ore");
+        public static final ITag.INamedTag<Block> ELECTRUM_BLOCK = forge("blocks/electrum_block");
+        public static final ITag.INamedTag<Block> MACHINE_BLOCK = forge("blocks/machine_block");
+        public static final ITag.INamedTag<Block> MACHINE_CONTROLLER = forge("blocks/machine_controller");
+        public static final ITag.INamedTag<Block> MACHINE_ENERGY_PORT = forge("blocks/machine_energy_port");
+        public static final ITag.INamedTag<Block> NICKEL_BLOCK = forge("blocks/nickel_block");
+        public static final ITag.INamedTag<Block> NICKEL_ORE = forge("blocks/nickel_ore");
+        public static final ITag.INamedTag<Block> PLATINUM_BLOCK = forge("blocks/platinum_block");
+        public static final ITag.INamedTag<Block> PLATINUM_ORE = forge("blocks/platinum_ore");
+        public static final ITag.INamedTag<Block> STEEL_BLOCK = forge("blocks/steel_block");
+        public static final ITag.INamedTag<Block> TIN_BLOCK = forge("blocks/tin_block");
+        public static final ITag.INamedTag<Block> TIN_ORE = forge("blocks/tin_ore");
 
         private static ITag.INamedTag<Block> forge(String path)
         {
@@ -29,7 +42,22 @@ public class ModTags
 
     public static final class Items
     {
-        //public static final ITag.INamedTag<Item> ORES_COPPER = forge("ores/copper");
+        public static final ITag.INamedTag<Item> ALUMINUM_BLOCK = forge("blocks/aluminum_block");
+        public static final ITag.INamedTag<Item> ALUMINUM_ORE = forge("blocks/aluminum_ore");
+        public static final ITag.INamedTag<Item> BRONZE_BLOCK = forge("blocks/bronze_block");
+        public static final ITag.INamedTag<Item> COPPER_BLOCK = forge("blocks/copper_block");
+        public static final ITag.INamedTag<Item> COPPER_ORE = forge("blocks/copper_ore");
+        public static final ITag.INamedTag<Item> ELECTRUM_BLOCK = forge("blocks/electrum_block");
+        public static final ITag.INamedTag<Item> MACHINE_BLOCK = forge("blocks/machine_block");
+        public static final ITag.INamedTag<Item> MACHINE_CONTROLLER = forge("blocks/machine_controller");
+        public static final ITag.INamedTag<Item> MACHINE_ENERGY_PORT = forge("blocks/machine_energy_port");
+        public static final ITag.INamedTag<Item> NICKEL_BLOCK = forge("blocks/nickel_block");
+        public static final ITag.INamedTag<Item> NICKEL_ORE = forge("blocks/nickel_ore");
+        public static final ITag.INamedTag<Item> PLATINUM_BLOCK = forge("blocks/platinum_block");
+        public static final ITag.INamedTag<Item> PLATINUM_ORE = forge("blocks/platinum_ore");
+        public static final ITag.INamedTag<Item> STEEL_BLOCK = forge("blocks/steel_block");
+        public static final ITag.INamedTag<Item> TIN_BLOCK = forge("blocks/tin_block");
+        public static final ITag.INamedTag<Item> TIN_ORE = forge("blocks/tin_ore");
 
         //public static final ITag.INamedTag<Item> INGOTS_COPPER = forge("ingots/copper");
 

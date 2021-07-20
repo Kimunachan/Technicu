@@ -17,7 +17,7 @@ public class ModTileEntityTypes
     public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Technicu.MOD_ID);
     //-------------------------
 
-    //public static final RegistryObject<TileEntityType<MetalPressTileEntity>> METAL_PRESS = register("metal_press", MetalPressTileEntity::new, ModBlocks.METAL_PRESS);
+    public static final RegistryObject<TileEntityType<MachineControllerTileEntity>> MACHINE_CONTROLLER = register("machine_controller", MachineControllerTileEntity::new, ModBlocks.MACHINE_CONTROLLER);
 
     static void register()
     {}

@@ -1,6 +1,6 @@
 package com.github.technicu.setup;
 
-import com.github.technicu.Technicu;
+import com.github.technicu.blocks.machineController.MachineControllerBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -14,8 +14,22 @@ import java.util.function.Supplier;
 
 public class ModBlocks extends Blocks
 {
-
-    public static final RegistryObject<Block> MACHINE_BLOCK = register("machine_block", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> ALUMINUM_BLOCK = register("aluminum_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> ALUMINUM_ORE = register("aluminum_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> BRONZE_BLOCK = register("bronze_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> COPPER_ORE = register("copper_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> ELECTRUM_BLOCK = register("electrum_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> MACHINE_BLOCK = register("machine_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<MachineControllerBlock> MACHINE_CONTROLLER = register("machine_controller", () -> new MachineControllerBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> MACHINE_ENERGY_PORT = register("machine_energy_port", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> NICKEL_BLOCK = register("nickel_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> NICKEL_ORE = register("nickel_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> PLATINUM_BLOCK = register("platinum_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> PLATINUM_ORE = register("platinum_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> STEEL_BLOCK = register("steel_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> TIN_BLOCK = register("tin_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<Block> TIN_ORE = register("tin_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
     static void register()
     {}
