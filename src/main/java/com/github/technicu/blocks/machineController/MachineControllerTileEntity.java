@@ -12,6 +12,7 @@ import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.util.Direction;
@@ -33,8 +34,62 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
 {
     private static boolean formed;
 
+    private int progress = 0;
+
+
+//new EnergyStorage(capacity,maxInput,maxOutput,startingEnergy)
     public MachineControllerTileEntity() {
         super(ModTileEntityTypes.MACHINE_CONTROLLER.get());
+    }
+
+    //<editor-fold desc="IIntArray">
+    private final IIntArray fields = new IIntArray()
+    {
+        @Override
+        public int get(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    return progress;
+                default:
+                    return 0;
+            }
+        }
+
+        @Override
+        public void set(int index, int value)
+        {
+            switch (index)
+            {
+                case 0:
+                    progress = value;
+                    break;
+            }
+        }
+
+        @Override
+        public int getCount()
+        {
+            return 1;
+        }
+    };
+    //</editor-fold>
+
+    void encodeExtraData(PacketBuffer data)
+    {
+        data.writeByte(fields.getCount());
+    }
+
+    @Nullable
+    public ModSmeltingRecipe getRecipe()
+    {
+        if (level == null || getItem(0).isEmpty())
+        {
+            return null;
+        }
+
+        return level.getRecipeManager().getRecipeFor(ModRecipes.Types.SMELTING, this, level).orElse(null);
     }
 
     @Override
@@ -43,6 +98,7 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
         checkFormed();
     }
 
+    //<editor-fold desc="Multiblock">
     private void checkFormed()
     {
 
@@ -236,6 +292,7 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
             formed = false;
         }
     }
+    //</editor-fold>
 
     public static boolean formed()
     {

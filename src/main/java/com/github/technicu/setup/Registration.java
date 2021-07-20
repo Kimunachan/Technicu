@@ -51,14 +51,4 @@ public class Registration
     {
         return DeferredRegister.create(registry, Technicu.MOD_ID);
     }
-
-    @Mod.EventBusSubscriber(modid = Technicu.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class Client
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent e)
-        {
-            ModContainerTypes.registerScreens(e);
-        }
-    }
 }

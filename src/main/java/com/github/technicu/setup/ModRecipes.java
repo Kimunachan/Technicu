@@ -18,7 +18,7 @@ public class ModRecipes
 
     public static  class Serializers
     {
-        //public static RegistryObject<IRecipeSerializer<PressingRecipe>> PRESSING = register("pressing", PressingRecipe.Serializer::new);
+        public static RegistryObject<IRecipeSerializer<ModSmeltingRecipe>> SMELTING = register("semlting", ModSmeltingRecipe.Serializer::new);
 
         public static <T extends IRecipe<?>>RegistryObject<IRecipeSerializer<T>> register
                 (String name, Supplier<IRecipeSerializer<T>> serializer)
