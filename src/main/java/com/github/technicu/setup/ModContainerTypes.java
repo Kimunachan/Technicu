@@ -1,5 +1,6 @@
 package com.github.technicu.setup;
 
+import com.github.technicu.blocks.machineController.MachineControllerBasicContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.api.distmarker.Dist;
