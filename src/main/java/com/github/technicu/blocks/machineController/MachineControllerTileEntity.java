@@ -509,7 +509,7 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
 
     public static boolean alloyBasicFormed()
     {
-        return formed;
+        return alloyBasicFormed;
     }
 
     public static boolean alloyAdvancedFormed()
@@ -562,4 +562,28 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
         return nbt;
     }
     //</editor-fold>
+
+    //M  M  M
+    //M  M  M
+    //M  M  M
+    //M  M  M
+    //
+    //M  M  M
+    //F  S  M
+    //F  S  M
+    //M  C  E
+    //
+    //G  G  G
+    //G  G  G
+    //G  K  M
+    //M  M  M
+    //
+    //
+    //M = Machine Block
+    //F = Steel Fence
+    //S = Steel Block
+    //C = Machine Controller
+    //E = Energy Port
+    //G = Glass Block
+    //K = Block of Copper
 }

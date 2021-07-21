@@ -42,10 +42,21 @@ public class MachineControllerBlock extends Block
     {
         if (!world.isClientSide())
         {
-            if (MachineControllerTileEntity.formed())
+            if (MachineControllerTileEntity.alloyBasicFormed())
             {
                 TileEntity tileEntity = world.getBlockEntity(pos);
-                if (tileEntity instanceof MachineControllerTileEntity) {
+                if (tileEntity instanceof MachineControllerTileEntity)
+                {
+                    NetworkHooks.openGui((ServerPlayerEntity) player, (MachineControllerTileEntity) tileEntity, pos);
+                    return ActionResultType.SUCCESS;
+                }
+            }
+
+            if (MachineControllerTileEntity.alloyAdvancedFormed())
+            {
+                TileEntity tileEntity = world.getBlockEntity(pos);
+                if (tileEntity instanceof MachineControllerTileEntity)
+                {
                     NetworkHooks.openGui((ServerPlayerEntity) player, (MachineControllerTileEntity) tileEntity, pos);
                     return ActionResultType.SUCCESS;
                 }

@@ -14,7 +14,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class MachineControllerBasicScreen extends ContainerScreen<MachineControllerBasicContainer> {
 
 
-    private static final ResourceLocation MACHINE_CONTROLLER_BASIC_GUI = new ResourceLocation(Technicu.MOD_ID,"textures/gui/multiblock_basic_gui.png");
+    private static final ResourceLocation ALLOY_SMELTER_BASIC = new ResourceLocation(Technicu.MOD_ID,"textures/gui/multiblock_alloy_smelter_basic.png");
+    private static final ResourceLocation ALLOY_SMELTER_ADVANCED = new ResourceLocation(Technicu.MOD_ID,"textures/gui/multiblock_alloy_smelter_advanced.png");
 
     public MachineControllerBasicScreen(MachineControllerBasicContainer screenContainer, PlayerInventory playerInventory, ITextComponent title) {
         super(screenContainer, playerInventory, title);
@@ -39,9 +40,18 @@ public class MachineControllerBasicScreen extends ContainerScreen<MachineControl
 
     @SuppressWarnings("deprecation")
     @Override
-    protected void renderBg(MatrixStack matrixStack, float partialTicks, int mouseX, int mouseY) {
+    protected void renderBg(MatrixStack matrixStack, float partialTicks, int mouseX, int mouseY)
+    {
         RenderSystem.color4f(1f,1f,1f,1f);
-        this.minecraft.textureManager.bind(MACHINE_CONTROLLER_BASIC_GUI);
+
+        if (MachineControllerTileEntity.alloyBasicFormed())
+        {
+            this.minecraft.textureManager.bind(ALLOY_SMELTER_BASIC);
+        }
+        else if (MachineControllerTileEntity.alloyAdvancedFormed())
+        {
+            this.minecraft.textureManager.bind(ALLOY_SMELTER_ADVANCED);
+        }
 
         int x= (this.width - this.getXSize()) / 2;
         int y = (this.height-this.getYSize()) /2;
