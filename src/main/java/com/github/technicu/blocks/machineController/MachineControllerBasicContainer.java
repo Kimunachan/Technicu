@@ -38,8 +38,19 @@ public class MachineControllerBasicContainer extends Container {
         this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
         //slot,x,y
-        this.addSlot(new Slot((IInventory) tileEntity,0,56,35));
-        this.addSlot(new Slot((IInventory) tileEntity,1,116,35));
+        if (MachineControllerTileEntity.alloyBasicFormed())
+        {
+            this.addSlot(new Slot((IInventory) tileEntity,0,116,35));
+            this.addSlot(new Slot((IInventory) tileEntity,1,46,22));
+            this.addSlot(new Slot((IInventory) tileEntity,2,46,49));
+        }
+        else if (MachineControllerTileEntity.alloyAdvancedFormed())
+        {
+            this.addSlot(new Slot((IInventory) tileEntity,0,116,35));
+            this.addSlot(new Slot((IInventory) tileEntity,1,46,22));
+            this.addSlot(new Slot((IInventory) tileEntity,2,32,48));
+            this.addSlot(new Slot((IInventory) tileEntity,3,57,48));
+        }
 
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -80,9 +91,19 @@ public class MachineControllerBasicContainer extends Container {
         if(slot != null && slot.hasItem()){
             ItemStack stack1 = slot.getItem();
             stack = stack1.copy();
-            if(index < 36 &&!this.moveItemStackTo(stack1,MachineControllerTileEntity.slots,this.slots.size(),true)) {
-                return ItemStack.EMPTY;
+            if (MachineControllerTileEntity.alloyBasicFormed())
+            {
+                if (index < 3 && !this.moveItemStackTo(stack1, MachineControllerTileEntity.slots, this.slots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
             }
+            else if (MachineControllerTileEntity.alloyAdvancedFormed())
+            {
+                if (index < 4 && !this.moveItemStackTo(stack1, MachineControllerTileEntity.slots, this.slots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+
             if(!this.moveItemStackTo(stack1,0,MachineControllerTileEntity.slots,false)){
                 return ItemStack.EMPTY;
             }

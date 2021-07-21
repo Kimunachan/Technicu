@@ -1,6 +1,7 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
@@ -18,6 +19,7 @@ public class ModTileEntityTypes
     //-------------------------
 
     public static final RegistryObject<TileEntityType<MachineControllerTileEntity>> MACHINE_CONTROLLER = register("machine_controller", MachineControllerTileEntity::new, ModBlocks.MACHINE_CONTROLLER);
+    public static final RegistryObject<TileEntityType<EnergyPortTileEntity>> MACHINE_ENERGY_PORT = register("machine_energy_port", EnergyPortTileEntity::new, ModBlocks.MACHINE_ENERGY_PORT);
 
     static void register()
     {}
