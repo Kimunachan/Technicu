@@ -2,6 +2,7 @@ package com.github.technicu.setup;
 
 
 import com.github.technicu.Technicu;
+import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import com.github.technicu.capabilities.CapabilityProviderEnergy;
 import net.minecraft.tileentity.TileEntity;
@@ -15,8 +16,8 @@ public class ModCapabilities {
 
     @SubscribeEvent
     public static void attachCapabilitiesET(AttachCapabilitiesEvent<TileEntity> event){
-        if(event.getObject() instanceof MachineControllerTileEntity){
-            MachineControllerTileEntity entity = (MachineControllerTileEntity) event.getObject();
+        if(event.getObject() instanceof EnergyPortTileEntity){
+            EnergyPortTileEntity entity = (EnergyPortTileEntity) event.getObject();
             event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
         }
     }

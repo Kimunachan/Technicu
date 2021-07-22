@@ -15,9 +15,9 @@ import net.minecraft.util.IWorldPosCallable;
 
 import java.util.Objects;
 
-public class MachineControllerBasicContainer extends Container {
-
-
+public class MachineControllerContainer extends Container
+{
+    //<editor-fold>
     public final MachineControllerTileEntity tileEntity;
     private final IWorldPosCallable canInteractWithCallable;
 
@@ -32,24 +32,18 @@ public class MachineControllerBasicContainer extends Container {
 
         return 0;
     }
-    public MachineControllerBasicContainer(final int windowId, final PlayerInventory playerInventory, final MachineControllerTileEntity tileEntity) {
-        super(ModContainerTypes.MACHINE_CONTROLLER_BASIC.get(), windowId);
+    public MachineControllerContainer(final int windowId, final PlayerInventory playerInventory, final MachineControllerTileEntity tileEntity) {
+        super(ModContainerTypes.MACHINE_CONTROLLER.get(), windowId);
         this.tileEntity = tileEntity;
         this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
         //slot,x,y
-        if (MachineControllerTileEntity.alloyBasicFormed())
+        if (MachineControllerTileEntity.formed())
         {
-            this.addSlot(new Slot((IInventory) tileEntity,0,116,35));
-            this.addSlot(new Slot((IInventory) tileEntity,1,46,22));
-            this.addSlot(new Slot((IInventory) tileEntity,2,46,49));
-        }
-        else if (MachineControllerTileEntity.alloyAdvancedFormed())
-        {
-            this.addSlot(new Slot((IInventory) tileEntity,0,116,35));
-            this.addSlot(new Slot((IInventory) tileEntity,1,46,22));
-            this.addSlot(new Slot((IInventory) tileEntity,2,32,48));
-            this.addSlot(new Slot((IInventory) tileEntity,3,57,48));
+            this.addSlot(new Slot((IInventory) tileEntity,0,46,22));
+            this.addSlot(new Slot((IInventory) tileEntity,1,33,49));
+            this.addSlot(new Slot((IInventory) tileEntity,2,58,49));
+            this.addSlot(new Slot((IInventory) tileEntity,3,116,35));
         }
 
         for (int row = 0; row < 3; row++) {
@@ -64,7 +58,7 @@ public class MachineControllerBasicContainer extends Container {
 
     }
 
-    public MachineControllerBasicContainer(final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
+    public MachineControllerContainer(final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
         this(windowId, playerInventory, getTileEntity(playerInventory, data));
     }
 
@@ -91,13 +85,8 @@ public class MachineControllerBasicContainer extends Container {
         if(slot != null && slot.hasItem()){
             ItemStack stack1 = slot.getItem();
             stack = stack1.copy();
-            if (MachineControllerTileEntity.alloyBasicFormed())
-            {
-                if (index < 3 && !this.moveItemStackTo(stack1, MachineControllerTileEntity.slots, this.slots.size(), true)) {
-                    return ItemStack.EMPTY;
-                }
-            }
-            else if (MachineControllerTileEntity.alloyAdvancedFormed())
+
+            if (MachineControllerTileEntity.formed())
             {
                 if (index < 4 && !this.moveItemStackTo(stack1, MachineControllerTileEntity.slots, this.slots.size(), true)) {
                     return ItemStack.EMPTY;
@@ -117,4 +106,5 @@ public class MachineControllerBasicContainer extends Container {
 
         return stack;
     }
+    //</editor-fold>
 }

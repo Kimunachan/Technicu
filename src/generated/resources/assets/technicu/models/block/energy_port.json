@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "technicu:block/energy_port_side",
+    "front": "technicu:block/energy_port_front",
+    "top": "technicu:block/energy_port_top"
+  }
+}

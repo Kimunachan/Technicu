@@ -23,7 +23,6 @@ public class ModItemTagsProvider extends ItemTagsProvider
         copy(ModTags.Blocks.ELECTRUM_BLOCK, ModTags.Items.ELECTRUM_BLOCK);
         copy(ModTags.Blocks.MACHINE_BLOCK, ModTags.Items.MACHINE_BLOCK);
         copy(ModTags.Blocks.MACHINE_CONTROLLER, ModTags.Items.MACHINE_CONTROLLER);
-        copy(ModTags.Blocks.MACHINE_ENERGY_PORT, ModTags.Items.MACHINE_ENERGY_PORT);
         copy(ModTags.Blocks.NICKEL_BLOCK, ModTags.Items.NICKEL_BLOCK);
         copy(ModTags.Blocks.NICKEL_ORE, ModTags.Items.NICKEL_ORE);
         copy(ModTags.Blocks.PLATINUM_BLOCK, ModTags.Items.PLATINUM_BLOCK);

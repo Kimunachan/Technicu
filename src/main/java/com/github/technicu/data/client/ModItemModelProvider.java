@@ -23,14 +23,25 @@ public class ModItemModelProvider extends ItemModelProvider
         withExistingParent("copper_block", modLoc("block/copper_block"));
         withExistingParent("copper_ore", modLoc("block/copper_ore"));
         withExistingParent("electrum_block", modLoc("block/electrum_block"));
+        withExistingParent("energy_port", mcLoc("block/orientable")).texture("side", modLoc("block/energy_port_side")).texture("front", modLoc("block/energy_port_front")).texture("top", modLoc("block/energy_port_top"));;
         withExistingParent("machine_block", modLoc("block/machine_block"));
-        withExistingParent("machine_controller", modLoc("block/machine_controller"));
-        withExistingParent("machine_energy_port", modLoc("block/machine_energy_port"));
+        withExistingParent("machine_controller", mcLoc("block/orientable")).texture("side", modLoc("block/machine_controller_side")).texture("front", modLoc("block/machine_controller_front")).texture("top", modLoc("block/machine_controller_top"));;
         withExistingParent("nickel_block", modLoc("block/nickel_block"));
         withExistingParent("nickel_ore", modLoc("block/nickel_ore"));
         withExistingParent("platinum_block", modLoc("block/platinum_block"));
         withExistingParent("platinum_ore", modLoc("block/platinum_ore"));
         withExistingParent("steel_block", modLoc("block/steel_block"));
+
+
+        fencePost("steel_fence_post", modLoc("block/steel_block"));
+        fenceSide("steel_fence_side", modLoc("block/steel_block"));
+        fenceInventory("steel_fence",modLoc("block/steel_block"));
+
+        fenceGate("steel_fence_gate",modLoc("block/steel_block"));
+        fenceGateOpen("steel_fence_gate_open",modLoc("block/steel_block"));
+        fenceGateWall("steel_fence_gate_wall",modLoc("block/steel_block"));
+        fenceGateWallOpen("steel_fence_gate_wall_open",modLoc("block/steel_block"));
+
         withExistingParent("tin_block", modLoc("block/tin_block"));
         withExistingParent("tin_ore", modLoc("block/tin_ore"));
 

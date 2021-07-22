@@ -1,6 +1,8 @@
 {
   "itemGroup.technicu.items": "Technicu: Items",
   "itemGroup.technicu.blocks": "Technicu: Blocks",
+  "itemGroup.technicu.tools": "Technicu: Tools",
+  "itemGroup.technicu.decoration": "Technicu: Decoration",
 
   "item.technicu.aluminum_ingot": "Aluminum Ingot",
   "block.technicu.aluminum_ore": "Aluminum Ore",
@@ -29,6 +31,8 @@
   "item.technicu.platinum_ingot": "Platinum Ingot",
   "block.technicu.platinum_ore": "Platinum Ore",
   "item.technicu.platinum_rod": "Platinum Rod",
+  "block.technicu.steel_fence": "Steel Fence",
+  "block.technicu.steel_fence_gate": "Steel Fence Gate",
   "item.technicu.steel_ingot": "Steel Ingot",
   "item.technicu.steel_rod": "Steel Rod",
   "item.technicu.tin_ingot": "Tin Ingot",

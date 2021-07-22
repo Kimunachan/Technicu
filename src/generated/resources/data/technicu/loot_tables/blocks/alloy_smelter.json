@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "technicu:machine_energy_port"
+          "name": "technicu:alloy_smelter"
         }
       ],
       "conditions": [

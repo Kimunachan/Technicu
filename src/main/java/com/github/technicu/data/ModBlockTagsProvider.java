@@ -23,9 +23,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider
         tag(ModTags.Blocks.COPPER_BLOCK).add(ModBlocks.COPPER_BLOCK.get());
         tag(ModTags.Blocks.COPPER_ORE).add(ModBlocks.COPPER_ORE.get());
         tag(ModTags.Blocks.ELECTRUM_BLOCK).add(ModBlocks.ELECTRUM_BLOCK.get());
+        tag(ModTags.Blocks.ENERGY_PORT).add(ModBlocks.ENERGY_PORT.get());
+        tag(ModTags.Blocks.FURNACE_GENERATOR).add(ModBlocks.FURNACE_GENERATOR.get());
         tag(ModTags.Blocks.MACHINE_BLOCK).add(ModBlocks.MACHINE_BLOCK.get());
         tag(ModTags.Blocks.MACHINE_CONTROLLER).add(ModBlocks.MACHINE_CONTROLLER.get());
-        tag(ModTags.Blocks.MACHINE_ENERGY_PORT).add(ModBlocks.MACHINE_ENERGY_PORT.get());
+        tag(ModTags.Blocks.METAL_PRESS).add(ModBlocks.METAL_PRESS.get());
         tag(ModTags.Blocks.NICKEL_BLOCK).add(ModBlocks.NICKEL_BLOCK.get());
         tag(ModTags.Blocks.NICKEL_ORE).add(ModBlocks.NICKEL_ORE.get());
         tag(ModTags.Blocks.PLATINUM_BLOCK).add(ModBlocks.PLATINUM_BLOCK.get());

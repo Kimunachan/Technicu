@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "technicu:block/alloy_smelter"
+    },
+    "facing=south": {
+      "model": "technicu:block/alloy_smelter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "technicu:block/alloy_smelter",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "technicu:block/alloy_smelter",
+      "y": 90
+    }
+  }
+}

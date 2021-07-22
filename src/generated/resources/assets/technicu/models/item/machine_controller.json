@@ -1,3 +1,8 @@
 {
-  "parent": "technicu:block/machine_controller"
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "technicu:block/machine_controller_side",
+    "front": "technicu:block/machine_controller_front",
+    "top": "technicu:block/machine_controller_top"
+  }
 }

@@ -5,25 +5,37 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableTileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 
-public class EnergyPortTileEntity extends LockableTileEntity
+import javax.annotation.Nullable;
+
+public class EnergyPortTileEntity extends LockableTileEntity implements ITickableTileEntity
 {
+    //<editor-fold>
+    public static final int MAX_ENERGY = 25000;
+    TranslationTextComponent TITLE = new TranslationTextComponent("container." + Technicu.MOD_ID + ".energy_port");
 
-    public EnergyPortTileEntity()
-    {
-        super(ModTileEntityTypes.MACHINE_ENERGY_PORT.get());
+    public EnergyPortTileEntity() {
+        super(ModTileEntityTypes.ENERGY_PORT.get());
     }
 
+    //<editor-fold desc="LockablePart">
     @Override
     protected ITextComponent getDefaultName() {
-        return null;
+        return TITLE;
     }
 
     @Override
-    protected Container createMenu(int p_213906_1_, PlayerInventory p_213906_2_) {
-        return null;
+    protected Container createMenu(int windowId, PlayerInventory playerInventory) {
+        return new EnergyPortContainer(windowId,playerInventory,this);
     }
 
     @Override
@@ -65,4 +77,16 @@ public class EnergyPortTileEntity extends LockableTileEntity
     public void clearContent() {
 
     }
+
+
+    @Override
+    protected void invalidateCaps() {
+        super.invalidateCaps();
+        energyStorageLazyOptional.invalidate();
+    }
+
+    @Override
+    public void tick() {
+    }
+    //</editor-fold>
 }

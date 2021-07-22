@@ -1,7 +1,34 @@
 {
   "variants": {
-    "": {
+    "facing=north,powered=false": {
       "model": "technicu:block/machine_controller"
+    },
+    "facing=south,powered=false": {
+      "model": "technicu:block/machine_controller",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "technicu:block/machine_controller",
+      "y": 270
+    },
+    "facing=east,powered=false": {
+      "model": "technicu:block/machine_controller",
+      "y": 90
+    },
+    "facing=north,powered=true": {
+      "model": "technicu:block/machine_controller"
+    },
+    "facing=south,powered=true": {
+      "model": "technicu:block/machine_controller",
+      "y": 180
+    },
+    "facing=west,powered=true": {
+      "model": "technicu:block/machine_controller",
+      "y": 270
+    },
+    "facing=east,powered=true": {
+      "model": "technicu:block/machine_controller",
+      "y": 90
     }
   }
 }
