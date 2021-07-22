@@ -42,6 +42,7 @@ public class ModLootTableProvider extends LootTableProvider
         @Override
         protected void addTables()
         {
+            dropSelf(ModBlocks.ALLOY_SMELTER.get());
             dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
             dropSelf(ModBlocks.ALUMINUM_ORE.get());
             dropSelf(ModBlocks.BRONZE_BLOCK.get());

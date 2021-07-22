@@ -31,7 +31,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.PLATINUM_BLOCK.get());
         simpleBlock(ModBlocks.PLATINUM_ORE.get());
         simpleBlock(ModBlocks.STEEL_BLOCK.get());
+        fenceBlock(ModBlocks.STEEL_FENCE.get(), modLoc("block/steel_block"));
+        fenceGateBlock(ModBlocks.STEEL_FENCE_GATE.get(), modLoc("block/steel_block"));
         simpleBlock(ModBlocks.TIN_BLOCK.get());
         simpleBlock(ModBlocks.TIN_ORE.get());
+
+
     }
 }

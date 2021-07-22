@@ -57,15 +57,15 @@ public class ModRecipeProvider extends RecipeProvider
         ShapedRecipeBuilder.shaped(ModBlocks.STEEL_BLOCK.get()).define('#', ModItems.STEEL_INGOT.get()).pattern("###").pattern("###").pattern("###").unlockedBy("has_item", has(ModItems.STEEL_INGOT.get())).save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.TIN_BLOCK.get()).define('#', ModItems.TIN_INGOT.get()).pattern("###").pattern("###").pattern("###").unlockedBy("has_item", has(ModItems.TIN_INGOT.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.ALUMINIUM_ROD.get()).define('#', ModItems.ALUMINUM_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.ALUMINUM_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.BRONZE_ROD.get()).define('#', ModItems.BRONZE_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.BRONZE_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.COPPER_ROD.get()).define('#', ModItems.COPPER_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.COPPER_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.ELECTRUM_ROD.get()).define('#', ModItems.ELECTRUM_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.ELECTRUM_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.IRON_ROD.get()).define('#', Items.IRON_INGOT).pattern("#").pattern("#").unlockedBy("has_item", has(Items.IRON_INGOT)).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.NICKEL_ROD.get()).define('#', ModItems.NICKEL_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.NICKEL_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.PLATINUM_ROD.get()).define('#', ModItems.PLATINUM_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.PLATINUM_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.STEEL_ROD.get()).define('#', ModItems.STEEL_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.STEEL_INGOT.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.TIN_ROD.get()).define('#', ModItems.TIN_INGOT.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.TIN_INGOT.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.ALUMINUM_ROD.get()).define('#', ModItems.ALUMINUM_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.ALUMINUM_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.BRONZE_ROD.get()).define('#', ModItems.BRONZE_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.BRONZE_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.COPPER_ROD.get()).define('#', ModItems.COPPER_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.COPPER_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.ELECTRUM_ROD.get()).define('#', ModItems.ELECTRUM_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.ELECTRUM_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.IRON_ROD.get()).define('#', ModItems.IRON_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.IRON_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.NICKEL_ROD.get()).define('#', ModItems.NICKEL_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.NICKEL_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.PLATINUM_ROD.get()).define('#', ModItems.PLATINUM_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.PLATINUM_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.STEEL_ROD.get()).define('#', ModItems.STEEL_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.STEEL_PLATE.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.TIN_ROD.get()).define('#', ModItems.TIN_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.TIN_PLATE.get())).save(consumer);
         //</editor-fold>
         //<editor-fold desc="Smithing">
         //SmithingRecipeBuilder.smithing(Ingredient.of(Items.DIAMOND_AXE), Ingredient.of(ModItems.RUBY.get()), ModItems.RUBY_AXE.get()).unlocks("has_item", has(ModItems.RUBY.get())).save(consumer, "smithing_ruby_axe");

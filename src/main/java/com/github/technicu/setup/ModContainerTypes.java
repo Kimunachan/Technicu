@@ -9,6 +9,7 @@ import com.github.technicu.blocks.metalPress.MetalPressContainer;
 import com.mojang.realmsclient.client.Request;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.FurnaceContainer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.extensions.IForgeContainerType;

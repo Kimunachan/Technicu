@@ -1,5 +1,7 @@
 package com.github.technicu.blocks.energyPort;
 
+import com.github.technicu.Technicu;
+import com.github.technicu.capabilities.ModEnergyHandler;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -45,22 +47,22 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return true;
     }
 
     @Override
     public ItemStack getItem(int p_70301_1_) {
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
     public ItemStack removeItem(int p_70298_1_, int p_70298_2_) {
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
     public ItemStack removeItemNoUpdate(int p_70304_1_) {
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
@@ -70,12 +72,22 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
 
     @Override
     public boolean stillValid(PlayerEntity p_70300_1_) {
-        return false;
+        return true;
     }
 
     @Override
-    public void clearContent() {
+    public void clearContent() { }
+    //</editor-fold>
 
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY));
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if(cap == CapabilityEnergy.ENERGY){
+            return energyStorageLazyOptional.cast();
+        }
+
+        return super.getCapability(cap, side);
     }
 
 

@@ -1,6 +1,7 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.recipes.ModPressingRecipe;
 import com.github.technicu.recipes.ModSmeltingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -14,11 +15,13 @@ public class ModRecipes
     public static class Types
     {
         public static final IRecipeType<ModSmeltingRecipe> SMELTING = IRecipeType.register(Technicu.MOD_ID + "smelting");
+        public static final IRecipeType<ModPressingRecipe> PRESSING = IRecipeType.register(Technicu.MOD_ID + "pressing");
     }
 
     public static  class Serializers
     {
         public static RegistryObject<IRecipeSerializer<ModSmeltingRecipe>> SMELTING = register("semlting", ModSmeltingRecipe.Serializer::new);
+        public static RegistryObject<IRecipeSerializer<ModPressingRecipe>> PRESSING = register("pressing", ModPressingRecipe.Serializer::new);
 
         public static <T extends IRecipe<?>>RegistryObject<IRecipeSerializer<T>> register
                 (String name, Supplier<IRecipeSerializer<T>> serializer)

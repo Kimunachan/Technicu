@@ -31,6 +31,7 @@ import javax.annotation.Nullable;
 
 public class MachineControllerTileEntity extends LockableLootTileEntity implements ITickableTileEntity
 {
+    //<editor-fold>
     public static final int WORK_TIME = 400;
     private static boolean formed;
 

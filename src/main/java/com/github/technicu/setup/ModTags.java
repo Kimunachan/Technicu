@@ -12,6 +12,7 @@ public class ModTags
 {
     public static final class Blocks
     {
+        public static final ITag.INamedTag<Block> ALLOY_SMELTER = forge("blocks/alloy_smelter");
         public static final ITag.INamedTag<Block> ALUMINUM_BLOCK = forge("blocks/aluminum_block");
         public static final ITag.INamedTag<Block> ALUMINUM_ORE = forge("blocks/aluminum_ore");
         public static final ITag.INamedTag<Block> BRONZE_BLOCK = forge("blocks/bronze_block");
@@ -46,6 +47,7 @@ public class ModTags
 
     public static final class Items
     {
+        public static final ITag.INamedTag<Item> ALLOY_SMELTER = forge("blocks/alloy_smelter");
         public static final ITag.INamedTag<Item> ALUMINUM_BLOCK = forge("blocks/aluminum_block");
         public static final ITag.INamedTag<Item> ALUMINUM_ORE = forge("blocks/aluminum_ore");
         public static final ITag.INamedTag<Item> BRONZE_BLOCK = forge("blocks/bronze_block");

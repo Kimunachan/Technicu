@@ -17,6 +17,8 @@ public class ModItemModelProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
+
+        withExistingParent("alloy_smelter", mcLoc("block/orientable")).texture("side", modLoc("block/alloy_smelter_side")).texture("front", modLoc("block/alloy_smelter_front")).texture("top", modLoc("block/alloy_smelter_top"));;
         withExistingParent("aluminum_block", modLoc("block/aluminum_block"));
         withExistingParent("aluminum_ore", modLoc("block/aluminum_ore"));
         withExistingParent("bronze_block", modLoc("block/bronze_block"));
@@ -65,6 +67,16 @@ public class ModItemModelProvider extends ItemModelProvider
         builder("platinum_rod", itemGenerated);
         builder("steel_rod", itemGenerated);
         builder("tin_rod", itemGenerated);
+
+        builder("aluminum_plate", itemGenerated);
+        builder("bronze_plate", itemGenerated);
+        builder("copper_plate", itemGenerated);
+        builder("electrum_plate", itemGenerated);
+        builder("iron_plate", itemGenerated);
+        builder("nickel_plate", itemGenerated);
+        builder("platinum_plate", itemGenerated);
+        builder("steel_plate", itemGenerated);
+        builder("tin_plate", itemGenerated);
     }
 
     private ItemModelBuilder builder(String name, ModelFile itemGenerated)

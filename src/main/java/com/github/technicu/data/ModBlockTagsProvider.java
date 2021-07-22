@@ -17,6 +17,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider
     @Override
     protected void addTags()
     {
+        tag(ModTags.Blocks.ALLOY_SMELTER).add(ModBlocks.ALLOY_SMELTER.get());
         tag(ModTags.Blocks.ALUMINUM_BLOCK).add(ModBlocks.ALUMINUM_BLOCK.get());
         tag(ModTags.Blocks.ALUMINUM_ORE).add(ModBlocks.ALUMINUM_ORE.get());
         tag(ModTags.Blocks.BRONZE_BLOCK).add(ModBlocks.BRONZE_BLOCK.get());

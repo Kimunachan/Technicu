@@ -1,6 +1,7 @@
 package com.github.technicu.data;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.setup.ModBlocks;
 import com.github.technicu.setup.ModTags;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
@@ -15,12 +16,14 @@ public class ModItemTagsProvider extends ItemTagsProvider
 
     @Override
     protected void addTags() {
+        copy(ModTags.Blocks.ALLOY_SMELTER, ModTags.Items.ALLOY_SMELTER);
         copy(ModTags.Blocks.ALUMINUM_BLOCK, ModTags.Items.ALUMINUM_BLOCK);
         copy(ModTags.Blocks.ALUMINUM_ORE, ModTags.Items.ALUMINUM_ORE);
         copy(ModTags.Blocks.BRONZE_BLOCK, ModTags.Items.BRONZE_BLOCK);
         copy(ModTags.Blocks.COPPER_BLOCK, ModTags.Items.COPPER_BLOCK);
         copy(ModTags.Blocks.COPPER_ORE, ModTags.Items.COPPER_ORE);
         copy(ModTags.Blocks.ELECTRUM_BLOCK, ModTags.Items.ELECTRUM_BLOCK);
+        copy(ModTags.Blocks.FURNACE_GENERATOR, ModTags.Items.FURNACE_GENERATOR);
         copy(ModTags.Blocks.MACHINE_BLOCK, ModTags.Items.MACHINE_BLOCK);
         copy(ModTags.Blocks.MACHINE_CONTROLLER, ModTags.Items.MACHINE_CONTROLLER);
         copy(ModTags.Blocks.NICKEL_BLOCK, ModTags.Items.NICKEL_BLOCK);

@@ -16,7 +16,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class ClientSetup {
 
     @SubscribeEvent
-    public static void clientSetup(FMLClientSetupEvent event){
-        ScreenManager.register(ModContainerTypes.MACHINE_CONTROLLER_BASIC.get(), MachineControllerBasicScreen::new);
+    public static void clientSetup(FMLClientSetupEvent event) {
+        ScreenManager.register(ModContainerTypes.MACHINE_CONTROLLER.get(), MachineControllerScreen::new);
+        ScreenManager.register(ModContainerTypes.ALLOY_SMELTER.get(), AlloySmelterScreen::new);
+        ScreenManager.register(ModContainerTypes.ENERGY_PORT.get(), EnergyPortScreen::new);
+        ScreenManager.register(ModContainerTypes.METAL_PRESS.get(), MetalPressScreen::new);
+        ScreenManager.register(ModContainerTypes.FURNACE_GENERATOR.get(), FurnaceGeneratorScreen::new);
     }
 }
