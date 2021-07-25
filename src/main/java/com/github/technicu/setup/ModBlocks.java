@@ -1,6 +1,7 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.blocks.alloySmelter.AlloySmelterBlock;
+import com.github.technicu.blocks.charger.ChargerBlock;
 import com.github.technicu.blocks.energyPort.EnergyPortBlock;
 import com.github.technicu.blocks.fences.CopperFenceBlock;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorBlock;
@@ -26,6 +27,7 @@ public class ModBlocks extends Blocks
     public static final RegistryObject<Block> ALUMINUM_BLOCK = register("aluminum_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> ALUMINUM_ORE = register("aluminum_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> BRONZE_BLOCK = register("bronze_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<ChargerBlock> CHARGER = register("charger", () -> new ChargerBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> COPPER_ORE = register("copper_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<CopperFenceBlock> COPPER_FENCE = register("copper_fence", () -> new CopperFenceBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));

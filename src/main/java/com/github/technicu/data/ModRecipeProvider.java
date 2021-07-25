@@ -22,16 +22,23 @@ public class ModRecipeProvider extends RecipeProvider
     @Override
     public void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
     {
-
         //<editor-fold desc="Shapeless">
         ShapelessRecipeBuilder.shapeless(ModItems.ALUMINUM_INGOT.get(), 9).requires(ModBlocks.ALUMINUM_BLOCK.get()).unlockedBy("has_item", has(ModItems.ALUMINUM_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.ALUMINUM_PLATE.get(), 1).requires(ModItems.ALUMINUM_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.BRONZE_INGOT.get(), 9).requires(ModBlocks.BRONZE_BLOCK.get()).unlockedBy("has_item", has(ModItems.BRONZE_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.BRONZE_PLATE.get(), 1).requires(ModItems.BRONZE_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_INGOT.get(), 9).requires(ModBlocks.COPPER_BLOCK.get()).unlockedBy("has_item", has(ModItems.COPPER_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.COPPER_PLATE.get(), 1).requires(ModItems.COPPER_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.ELECTRUM_INGOT.get(), 9).requires(ModBlocks.ELECTRUM_BLOCK.get()).unlockedBy("has_item", has(ModItems.ELECTRUM_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.ELECTRUM_PLATE.get(), 1).requires(ModItems.ELECTRUM_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.NICKEL_INGOT.get(), 9).requires(ModBlocks.NICKEL_BLOCK.get()).unlockedBy("has_item", has(ModItems.NICKEL_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.NICKEL_PLATE.get(), 1).requires(ModItems.NICKEL_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.PLATINUM_INGOT.get(), 9).requires(ModBlocks.PLATINUM_BLOCK.get()).unlockedBy("has_item", has(ModItems.PLATINUM_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.PLATINUM_PLATE.get(), 1).requires(ModItems.PLATINUM_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.STEEL_INGOT.get(), 9).requires(ModBlocks.STEEL_BLOCK.get()).unlockedBy("has_item", has(ModItems.STEEL_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.STEEL_PLATE.get(), 1).requires(ModItems.STEEL_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.TIN_INGOT.get(), 9).requires(ModBlocks.TIN_BLOCK.get()).unlockedBy("has_item", has(ModItems.TIN_INGOT.get())).save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModItems.TIN_PLATE.get(), 1).requires(ModItems.TIN_INGOT.get()).requires(ModItems.HAMMER.get()).unlockedBy("has_item", has(ModItems.HAMMER.get())).save(consumer);
         //</editor-fold>
         //<editor-fold desc="Blasting">
         CookingRecipeBuilder.blasting(Ingredient.of(ModBlocks.ALUMINUM_ORE.get()), ModItems.ALUMINUM_INGOT.get(), 0.7F, 100).unlockedBy("has_item", has(ModBlocks.ALUMINUM_ORE.get())).save(consumer, modid("aluminium_ore_blasting"));
@@ -72,13 +79,12 @@ public class ModRecipeProvider extends RecipeProvider
 
         ShapedRecipeBuilder.shaped(ModBlocks.MACHINE_BLOCK.get()).define('R', ModItems.IRON_ROD.get()).define('P', ModItems.IRON_PLATE.get()).define('I', Items.IRON_INGOT).pattern("PRP").pattern("RIR").pattern("PRP").unlockedBy("has_item", has(ModItems.IRON_ROD.get())).save(consumer);
 
+        ShapedRecipeBuilder.shaped(ModItems.HAMMER.get()).define('I', Items.IRON_INGOT).define('S', Items.STICK).pattern(" I ").pattern(" SI").pattern("S  ").unlockedBy("has_item", has(Items.IRON_INGOT)).save(consumer);
+
         //</editor-fold>
         //<editor-fold desc="Smithing">
         //SmithingRecipeBuilder.smithing(Ingredient.of(Items.DIAMOND_AXE), Ingredient.of(ModItems.RUBY.get()), ModItems.RUBY_AXE.get()).unlocks("has_item", has(ModItems.RUBY.get())).save(consumer, "smithing_ruby_axe");
         //</editor-fold>
-
-        ShapelessRecipeBuilder.shapeless(ModItems.REDSTONE_CRYSTAL.get(), 9).requires(ModItems.TEST_ITEM.get()).requires(Items.DIRT).unlockedBy("has_item", has(ModItems.TIN_INGOT.get())).save(consumer);
-
     }
 
     private static ResourceLocation modid(String path)

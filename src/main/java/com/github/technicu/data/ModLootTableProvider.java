@@ -46,6 +46,7 @@ public class ModLootTableProvider extends LootTableProvider
             dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
             dropSelf(ModBlocks.ALUMINUM_ORE.get());
             dropSelf(ModBlocks.BRONZE_BLOCK.get());
+            dropSelf(ModBlocks.CHARGER.get());
             dropSelf(ModBlocks.COPPER_BLOCK.get());
             dropSelf(ModBlocks.COPPER_ORE.get());
             dropSelf(ModBlocks.COPPER_FENCE.get());

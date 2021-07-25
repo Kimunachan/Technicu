@@ -2,6 +2,7 @@ package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.alloySmelter.AlloySmelterScreen;
+import com.github.technicu.blocks.charger.ChargerScreen;
 import com.github.technicu.blocks.energyPort.EnergyPortScreen;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorScreen;
 import com.github.technicu.blocks.machineController.MachineControllerScreen;
@@ -22,5 +23,6 @@ public class ClientSetup {
         ScreenManager.register(ModContainerTypes.ENERGY_PORT.get(), EnergyPortScreen::new);
         ScreenManager.register(ModContainerTypes.METAL_PRESS.get(), MetalPressScreen::new);
         ScreenManager.register(ModContainerTypes.FURNACE_GENERATOR.get(), FurnaceGeneratorScreen::new);
+        ScreenManager.register(ModContainerTypes.CHARGER.get(), ChargerScreen::new);
     }
 }

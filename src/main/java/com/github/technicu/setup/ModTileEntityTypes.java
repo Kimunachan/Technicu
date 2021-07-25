@@ -2,6 +2,7 @@ package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.alloySmelter.AlloySmelterTileEntity;
+import com.github.technicu.blocks.charger.ChargerTileEntity;
 import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
@@ -25,6 +26,7 @@ public class ModTileEntityTypes {
     public static final RegistryObject<TileEntityType<AlloySmelterTileEntity>> ALLOY_SMELTER = register("alloy_smelter", AlloySmelterTileEntity::new, ModBlocks.ALLOY_SMELTER);
     public static final RegistryObject<TileEntityType<MetalPressTileEntity>> METAL_PRESS = register("metal_press", MetalPressTileEntity::new, ModBlocks.METAL_PRESS);
     public static final RegistryObject<TileEntityType<FurnaceGeneratorTileEntity>> FURNACE_GENERATOR = register("furnace_generator", FurnaceGeneratorTileEntity::new, ModBlocks.FURNACE_GENERATOR);
+    public static final RegistryObject<TileEntityType<ChargerTileEntity>> CHARGER = register("charger", ChargerTileEntity::new, ModBlocks.FURNACE_GENERATOR);
 
     static void register() {
     }

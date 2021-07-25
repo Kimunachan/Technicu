@@ -1,6 +1,7 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.blocks.alloySmelter.AlloySmelterContainer;
+import com.github.technicu.blocks.charger.ChargerContainer;
 import com.github.technicu.blocks.energyPort.EnergyPortContainer;
 import com.github.technicu.blocks.energyPort.EnergyPortScreen;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorContainer;
@@ -25,6 +26,7 @@ public class ModContainerTypes
     public static final RegistryObject<ContainerType<EnergyPortContainer>> ENERGY_PORT = register("energy_port", EnergyPortContainer::new);
     public static final RegistryObject<ContainerType<MetalPressContainer>> METAL_PRESS = register("metal_press", MetalPressContainer::new);
     public static final RegistryObject<ContainerType<FurnaceGeneratorContainer>> FURNACE_GENERATOR = register("furnace_generator", FurnaceGeneratorContainer::new);
+    public static final RegistryObject<ContainerType<ChargerContainer>> CHARGER = register("charger", ChargerContainer::new);
 
     private static <T extends Container> RegistryObject<ContainerType<T>> register(String name, IContainerFactory<T> factory)
     {
