@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "technicu:energy_cable"
+          "name": "technicu:copper_fence_gate"
         }
       ],
       "conditions": [

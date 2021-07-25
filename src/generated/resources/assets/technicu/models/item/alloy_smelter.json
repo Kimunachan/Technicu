@@ -3,6 +3,7 @@
   "textures": {
     "side": "technicu:block/alloy_smelter_side",
     "front": "technicu:block/alloy_smelter_front",
-    "top": "technicu:block/alloy_smelter_top"
+    "top": "technicu:block/alloy_smelter_top",
+    "bottom": "technicu:block/alloy_smelter_bottom"
   }
 }

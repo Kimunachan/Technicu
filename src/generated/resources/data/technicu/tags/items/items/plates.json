@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "technicu:aluminum_plate",
+    "technicu:bronze_plate",
+    "technicu:copper_plate",
+    "technicu:electrum_plate",
+    "technicu:nickel_plate",
+    "technicu:platinum_plate",
+    "technicu:steel_plate",
+    "technicu:tin_plate"
+  ]
+}

@@ -1,6 +1,7 @@
 package com.github.technicu.blocks.metalPress;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.capabilities.ModEnergyHandler;
 import com.github.technicu.recipes.ModPressingRecipe;
 import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
@@ -13,10 +14,15 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
@@ -25,9 +31,28 @@ public class MetalPressTileEntity extends LockableLootTileEntity
     private static boolean formed;
 
     private int progress = 0;
+    public static final int MAX_ENERGY = 25000;
 
     public MetalPressTileEntity() {
         super(ModTileEntityTypes.METAL_PRESS.get());
+    }
+
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if(cap == CapabilityEnergy.ENERGY){
+            return energyStorageLazyOptional.cast();
+        }
+
+        return super.getCapability(cap, side);
+    }
+
+
+    @Override
+    protected void invalidateCaps() {
+        super.invalidateCaps();
+        energyStorageLazyOptional.invalidate();
     }
 
     //<editor-fold desc="IIntArray">

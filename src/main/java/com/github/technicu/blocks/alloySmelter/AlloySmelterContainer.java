@@ -12,6 +12,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IWorldPosCallable;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 
 import java.util.Objects;
 
@@ -99,6 +102,9 @@ public class AlloySmelterContainer extends Container {
         }
 
         return stack;
+    }
+    public LazyOptional<IEnergyStorage> getCapabilityFromTE(){
+        return this.tileEntity.getCapability(CapabilityEnergy.ENERGY);
     }
     //</editor-fold>
 }

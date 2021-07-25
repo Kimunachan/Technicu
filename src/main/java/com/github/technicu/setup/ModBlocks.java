@@ -2,19 +2,21 @@ package com.github.technicu.setup;
 
 import com.github.technicu.blocks.alloySmelter.AlloySmelterBlock;
 import com.github.technicu.blocks.energyPort.EnergyPortBlock;
+import com.github.technicu.blocks.fences.CopperFenceBlock;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorBlock;
 import com.github.technicu.blocks.machineController.MachineControllerBlock;
 import com.github.technicu.blocks.metalPress.MetalPressBlock;
-import com.github.technicu.blocks.steelFence.SteelFenceBlock;
-import com.github.technicu.blocks.steelFence.SteelFenceGateBlock;
+import com.github.technicu.blocks.fences.SteelFenceBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
+import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 
@@ -50,8 +52,11 @@ public class ModBlocks extends Blocks {
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> ret = registerNoItem(name, block);
-        Registration.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties().tab(ModTabs.MOD_TAB_BLOCKS)));
-
+        if(name.contains("_fence")){
+            Registration.ITEMS.register(name, () -> new BlockItem(ret.get(),new Item.Properties().tab(ModTabs.MOD_TAB_DECORATION)));
+        } else {
+            Registration.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties().tab(ModTabs.MOD_TAB_BLOCKS)));
+        }
         return ret;
     }
 }

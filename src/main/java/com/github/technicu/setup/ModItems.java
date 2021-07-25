@@ -1,7 +1,10 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.items.RedstoneCrystalItem;
+import com.github.technicu.items.TestItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ModItems
@@ -40,6 +43,9 @@ public class ModItems
     public static final RegistryObject<Item> STEEL_PLATE = Registration.ITEMS.register("steel_plate", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     public static final RegistryObject<Item> TIN_PLATE = Registration.ITEMS.register("tin_plate", () -> new Item(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
     //</editor-fold>
+
+    public static final RegistryObject<RedstoneCrystalItem> REDSTONE_CRYSTAL = Registration.ITEMS.register("redstone_crystal",()-> new RedstoneCrystalItem(new Item.Properties().tab(ModTabs.MOD_TAB_ITEMS)));
+    public static final RegistryObject<TestItem> TEST_ITEM = Registration.ITEMS.register("test_item",()-> new TestItem(new Item.Properties().craftRemainder(Items.DIRT).tab(ModTabs.MOD_TAB_ITEMS)));
 
     static void register()
     {

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "technicu:aluminum_rod",
+    "technicu:bronze_rod",
+    "technicu:copper_rod",
+    "technicu:electrum_rod",
+    "technicu:nickel_rod",
+    "technicu:platinum_rod",
+    "technicu:steel_rod",
+    "technicu:tin_rod"
+  ]
+}

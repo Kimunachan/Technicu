@@ -2,7 +2,7 @@ package com.github.technicu.blocks.machineController;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.ModBlockStateProperties;
-import com.github.technicu.capabilities.CapabilityProviderEnergy;
+import com.github.technicu.capabilities.ModEnergyHandler;
 import com.github.technicu.recipes.ModSmeltingRecipe;
 import com.github.technicu.setup.ModBlocks;
 import com.github.technicu.setup.ModRecipes;
@@ -24,7 +24,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
@@ -36,6 +38,7 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
     private static boolean formed;
 
     public static int slots = 4;
+    public static final int MAX_ENERGY = 25000;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
 
@@ -51,6 +54,23 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
         }
 
         return level.getRecipeManager().getRecipeFor(ModRecipes.Types.SMELTING, this, level).orElse(null);
+    }
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if(cap == CapabilityEnergy.ENERGY){
+            return energyStorageLazyOptional.cast();
+        }
+
+        return super.getCapability(cap, side);
+    }
+
+
+    @Override
+    protected void invalidateCaps() {
+        super.invalidateCaps();
+        energyStorageLazyOptional.invalidate();
     }
 
     @Override

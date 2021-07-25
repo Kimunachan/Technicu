@@ -1,6 +1,7 @@
 package com.github.technicu.blocks.furnaceGenerator;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.capabilities.ModEnergyHandler;
 import com.github.technicu.recipes.ModSmeltingRecipe;
 import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
@@ -11,9 +12,14 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.LockableLootTileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
@@ -25,6 +31,7 @@ public class FurnaceGeneratorTileEntity extends LockableLootTileEntity
     public static int slots = 1;
 
     int progress = 0;
+    public static final int MAX_ENERGY = 25000;
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
 
@@ -32,7 +39,23 @@ public class FurnaceGeneratorTileEntity extends LockableLootTileEntity
     public FurnaceGeneratorTileEntity() {
         super(ModTileEntityTypes.FURNACE_GENERATOR.get());
     }
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
 
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
+        if(cap == CapabilityEnergy.ENERGY){
+            return energyStorageLazyOptional.cast();
+        }
+
+        return super.getCapability(cap, side);
+    }
+
+
+    @Override
+    protected void invalidateCaps() {
+        super.invalidateCaps();
+        energyStorageLazyOptional.invalidate();
+    }
     @Override
     protected NonNullList<ItemStack> getItems() {
         return this.items;

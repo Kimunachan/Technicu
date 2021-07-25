@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "technicu:aluminum_ingot",
+    "technicu:bronze_ingot",
+    "technicu:copper_ingot",
+    "technicu:electrum_ingot",
+    "technicu:nickel_ingot",
+    "technicu:platinum_ingot",
+    "technicu:steel_ingot",
+    "technicu:tin_ingot"
+  ]
+}

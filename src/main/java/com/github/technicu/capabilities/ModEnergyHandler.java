@@ -1,8 +1,6 @@
 package com.github.technicu.capabilities;
 
-import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.EnergyStorage;
-import net.minecraftforge.items.ItemStackHandler;
 
 public class ModEnergyHandler extends EnergyStorage {
 

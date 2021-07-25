@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IRI",
+    "IRI"
+  ],
+  "key": {
+    "R": {
+      "item": "technicu:copper_rod"
+    },
+    "I": {
+      "item": "technicu:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "technicu:copper_fence"
+  }
+}

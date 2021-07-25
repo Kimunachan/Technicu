@@ -15,25 +15,41 @@ public class ModItemTagsProvider extends ItemTagsProvider
     }
 
     @Override
-    protected void addTags() {
-        copy(ModTags.Blocks.ALLOY_SMELTER, ModTags.Items.ALLOY_SMELTER);
-        copy(ModTags.Blocks.ALUMINUM_BLOCK, ModTags.Items.ALUMINUM_BLOCK);
-        copy(ModTags.Blocks.ALUMINUM_ORE, ModTags.Items.ALUMINUM_ORE);
-        copy(ModTags.Blocks.BRONZE_BLOCK, ModTags.Items.BRONZE_BLOCK);
-        copy(ModTags.Blocks.COPPER_BLOCK, ModTags.Items.COPPER_BLOCK);
-        copy(ModTags.Blocks.COPPER_ORE, ModTags.Items.COPPER_ORE);
-        copy(ModTags.Blocks.ELECTRUM_BLOCK, ModTags.Items.ELECTRUM_BLOCK);
-        copy(ModTags.Blocks.FURNACE_GENERATOR, ModTags.Items.FURNACE_GENERATOR);
-        copy(ModTags.Blocks.MACHINE_BLOCK, ModTags.Items.MACHINE_BLOCK);
-        copy(ModTags.Blocks.MACHINE_CONTROLLER, ModTags.Items.MACHINE_CONTROLLER);
-        copy(ModTags.Blocks.NICKEL_BLOCK, ModTags.Items.NICKEL_BLOCK);
-        copy(ModTags.Blocks.NICKEL_ORE, ModTags.Items.NICKEL_ORE);
-        copy(ModTags.Blocks.PLATINUM_BLOCK, ModTags.Items.PLATINUM_BLOCK);
-        copy(ModTags.Blocks.PLATINUM_ORE, ModTags.Items.PLATINUM_ORE);
-        copy(ModTags.Blocks.STEEL_BLOCK, ModTags.Items.STEEL_BLOCK);
-        copy(ModTags.Blocks.TIN_BLOCK, ModTags.Items.TIN_BLOCK);
-        copy(ModTags.Blocks.TIN_ORE, ModTags.Items.TIN_ORE);
+    protected void addTags()
+    {
+        copy(ModTags.Blocks.FENCE, ModTags.Items.FENCE);
 
-        //tag(ModTags.Items.EXAMPLE_ITEM).add(ModItems.EXAMPLE_ITEM.get());
+        //<editor-fold desc="Ingots">
+        tag(ModTags.Items.INGOTS).add(ModItems.ALUMINUM_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.BRONZE_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.COPPER_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.ELECTRUM_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.NICKEL_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.PLATINUM_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.STEEL_INGOT.get());
+        tag(ModTags.Items.INGOTS).add(ModItems.TIN_INGOT.get());
+        //</editor-fold>
+
+        //<editor-fold desc="Rods">
+        tag(ModTags.Items.RODS).add(ModItems.ALUMINUM_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.BRONZE_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.COPPER_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.ELECTRUM_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.NICKEL_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.PLATINUM_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.STEEL_ROD.get());
+        tag(ModTags.Items.RODS).add(ModItems.TIN_ROD.get());
+        //</editor-fold>
+
+        //<editor-fold desc="Plates">
+        tag(ModTags.Items.PLATES).add(ModItems.ALUMINUM_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.BRONZE_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.COPPER_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.ELECTRUM_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.NICKEL_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.PLATINUM_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.STEEL_PLATE.get());
+        tag(ModTags.Items.PLATES).add(ModItems.TIN_PLATE.get());
+        //</editor-fold>
     }
 }

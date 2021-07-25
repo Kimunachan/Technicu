@@ -1,16 +1,15 @@
-package com.github.technicu.blocks.steelFence;
+package com.github.technicu.blocks.fences;
 
-import com.github.technicu.setup.ModBlocks;
+import com.github.technicu.setup.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 
-public class SteelFenceBlock extends FenceBlock
+public class CopperFenceBlock extends FenceBlock
 {
-    public SteelFenceBlock(Properties p_i48399_1_) {
+    public CopperFenceBlock(Properties p_i48399_1_) {
         super(p_i48399_1_);
     }
 
@@ -24,6 +23,7 @@ public class SteelFenceBlock extends FenceBlock
     }
 
     private boolean isSameFence(Block block) {
-        return block.is(ModBlocks.STEEL_FENCE.get());
+
+        return ModTags.Blocks.FENCE.contains(block);
     }
 }

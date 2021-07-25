@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IRI",
+    "IRI"
+  ],
+  "key": {
+    "R": {
+      "item": "technicu:steel_rod"
+    },
+    "I": {
+      "item": "technicu:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "technicu:steel_fence"
+  }
+}

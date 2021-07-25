@@ -16,7 +16,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        horizontalBlock(ModBlocks.ALLOY_SMELTER.get(), modLoc("block/alloy_smelter_side"), modLoc("block/alloy_smelter_front"), modLoc("block/alloy_smelter_top"));
+        horizontalBlock(ModBlocks.ALLOY_SMELTER.get(),models().orientableWithBottom(ModBlocks.ALLOY_SMELTER.get().getRegistryName().getPath(),modLoc("block/alloy_smelter_side"),modLoc("block/alloy_smelter_front"),modLoc("block/alloy_smelter_bottom"),modLoc("block/alloy_smelter_top")));
         simpleBlock(ModBlocks.ALUMINUM_BLOCK.get());
         simpleBlock(ModBlocks.ALUMINUM_ORE.get());
         simpleBlock(ModBlocks.BRONZE_BLOCK.get());
