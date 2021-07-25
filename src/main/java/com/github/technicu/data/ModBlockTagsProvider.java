@@ -17,24 +17,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider
     @Override
     protected void addTags()
     {
-        tag(ModTags.Blocks.ALLOY_SMELTER).add(ModBlocks.ALLOY_SMELTER.get());
-        tag(ModTags.Blocks.ALUMINUM_BLOCK).add(ModBlocks.ALUMINUM_BLOCK.get());
-        tag(ModTags.Blocks.ALUMINUM_ORE).add(ModBlocks.ALUMINUM_ORE.get());
-        tag(ModTags.Blocks.BRONZE_BLOCK).add(ModBlocks.BRONZE_BLOCK.get());
-        tag(ModTags.Blocks.COPPER_BLOCK).add(ModBlocks.COPPER_BLOCK.get());
-        tag(ModTags.Blocks.COPPER_ORE).add(ModBlocks.COPPER_ORE.get());
-        tag(ModTags.Blocks.ELECTRUM_BLOCK).add(ModBlocks.ELECTRUM_BLOCK.get());
-        tag(ModTags.Blocks.ENERGY_PORT).add(ModBlocks.ENERGY_PORT.get());
-        tag(ModTags.Blocks.FURNACE_GENERATOR).add(ModBlocks.FURNACE_GENERATOR.get());
-        tag(ModTags.Blocks.MACHINE_BLOCK).add(ModBlocks.MACHINE_BLOCK.get());
-        tag(ModTags.Blocks.MACHINE_CONTROLLER).add(ModBlocks.MACHINE_CONTROLLER.get());
-        tag(ModTags.Blocks.METAL_PRESS).add(ModBlocks.METAL_PRESS.get());
-        tag(ModTags.Blocks.NICKEL_BLOCK).add(ModBlocks.NICKEL_BLOCK.get());
-        tag(ModTags.Blocks.NICKEL_ORE).add(ModBlocks.NICKEL_ORE.get());
-        tag(ModTags.Blocks.PLATINUM_BLOCK).add(ModBlocks.PLATINUM_BLOCK.get());
-        tag(ModTags.Blocks.PLATINUM_ORE).add(ModBlocks.PLATINUM_ORE.get());
-        tag(ModTags.Blocks.STEEL_BLOCK).add(ModBlocks.STEEL_BLOCK.get());
-        tag(ModTags.Blocks.TIN_BLOCK).add(ModBlocks.TIN_BLOCK.get());
-        tag(ModTags.Blocks.TIN_ORE).add(ModBlocks.TIN_ORE.get());
+        //<editor-fold desc="Fence">
+        tag(ModTags.Blocks.FENCE).add(ModBlocks.STEEL_FENCE.get());
+        tag(ModTags.Blocks.FENCE).add(ModBlocks.COPPER_FENCE.get());
+        //</editor-fold>
+
+        //<editor-fold desc="Fence Gate">
+        tag(ModTags.Blocks.FENCE_GATE).add(ModBlocks.STEEL_FENCE_GATE.get());
+        tag(ModTags.Blocks.FENCE_GATE).add(ModBlocks.COPPER_FENCE_GATE.get());
+        //</editor-fold>
     }
 }

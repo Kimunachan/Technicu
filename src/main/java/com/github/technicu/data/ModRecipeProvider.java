@@ -66,10 +66,19 @@ public class ModRecipeProvider extends RecipeProvider
         ShapedRecipeBuilder.shaped(ModItems.PLATINUM_ROD.get()).define('#', ModItems.PLATINUM_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.PLATINUM_PLATE.get())).save(consumer);
         ShapedRecipeBuilder.shaped(ModItems.STEEL_ROD.get()).define('#', ModItems.STEEL_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.STEEL_PLATE.get())).save(consumer);
         ShapedRecipeBuilder.shaped(ModItems.TIN_ROD.get()).define('#', ModItems.TIN_PLATE.get()).pattern("#").pattern("#").unlockedBy("has_item", has(ModItems.TIN_PLATE.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.COPPER_FENCE.get()).define('R', ModItems.COPPER_ROD.get()).define('I', ModItems.COPPER_INGOT.get()).pattern("IRI").pattern("IRI").unlockedBy("has_item", has(ModItems.COPPER_ROD.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.STEEL_FENCE.get()).define('R', ModItems.STEEL_ROD.get()).define('I', ModItems.STEEL_INGOT.get()).pattern("IRI").pattern("IRI").unlockedBy("has_item", has(ModItems.STEEL_ROD.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.MACHINE_BLOCK.get()).define('R', ModItems.IRON_ROD.get()).define('P', ModItems.IRON_PLATE.get()).define('I', Items.IRON_INGOT).pattern("PRP").pattern("RIR").pattern("PRP").unlockedBy("has_item", has(ModItems.IRON_ROD.get())).save(consumer);
+
         //</editor-fold>
         //<editor-fold desc="Smithing">
         //SmithingRecipeBuilder.smithing(Ingredient.of(Items.DIAMOND_AXE), Ingredient.of(ModItems.RUBY.get()), ModItems.RUBY_AXE.get()).unlocks("has_item", has(ModItems.RUBY.get())).save(consumer, "smithing_ruby_axe");
         //</editor-fold>
+
+        ShapelessRecipeBuilder.shapeless(ModItems.REDSTONE_CRYSTAL.get(), 9).requires(ModItems.TEST_ITEM.get()).requires(Items.DIRT).unlockedBy("has_item", has(ModItems.TIN_INGOT.get())).save(consumer);
+
     }
 
     private static ResourceLocation modid(String path)

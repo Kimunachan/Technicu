@@ -3,7 +3,6 @@ package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
-import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import com.github.technicu.capabilities.CapabilityProviderEnergy;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;

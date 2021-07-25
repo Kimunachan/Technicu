@@ -17,15 +17,22 @@ public class ModItemModelProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-
-        withExistingParent("alloy_smelter", mcLoc("block/orientable")).texture("side", modLoc("block/alloy_smelter_side")).texture("front", modLoc("block/alloy_smelter_front")).texture("top", modLoc("block/alloy_smelter_top"));;
+        withExistingParent("alloy_smelter", mcLoc("block/orientable")).texture("side", modLoc("block/alloy_smelter_side")).texture("front", modLoc("block/alloy_smelter_front")).texture("top", modLoc("block/alloy_smelter_top")).texture("bottom",modLoc("block/alloy_smelter_bottom"));
         withExistingParent("aluminum_block", modLoc("block/aluminum_block"));
         withExistingParent("aluminum_ore", modLoc("block/aluminum_ore"));
         withExistingParent("bronze_block", modLoc("block/bronze_block"));
         withExistingParent("copper_block", modLoc("block/copper_block"));
         withExistingParent("copper_ore", modLoc("block/copper_ore"));
+        fenceInventory("copper_fence", modLoc("block/copper_block"));
+
+        fenceGate("copper_fence_gate",modLoc("block/copper_block"));
+        fenceGateOpen("copper_fence_gate_open",modLoc("block/copper_block"));
+        fenceGateWall("copper_fence_gate_wall",modLoc("block/copper_block"));
+        fenceGateWallOpen("copper_fence_gate_wall_open",modLoc("block/copper_block"));
+
         withExistingParent("electrum_block", modLoc("block/electrum_block"));
         withExistingParent("energy_port", mcLoc("block/orientable")).texture("side", modLoc("block/energy_port_side")).texture("front", modLoc("block/energy_port_front")).texture("top", modLoc("block/energy_port_top"));;
+        withExistingParent("furnace_generator", mcLoc("block/orientable")).texture("side", modLoc("block/furnace_generator_side")).texture("front", modLoc("block/furnace_generator_front")).texture("top", modLoc("block/furnace_generator_top"));;
         withExistingParent("machine_block", modLoc("block/machine_block"));
         withExistingParent("machine_controller", mcLoc("block/orientable")).texture("side", modLoc("block/machine_controller_side")).texture("front", modLoc("block/machine_controller_front")).texture("top", modLoc("block/machine_controller_top"));;
         withExistingParent("nickel_block", modLoc("block/nickel_block"));
@@ -67,16 +74,6 @@ public class ModItemModelProvider extends ItemModelProvider
         builder("platinum_rod", itemGenerated);
         builder("steel_rod", itemGenerated);
         builder("tin_rod", itemGenerated);
-
-        builder("aluminum_plate", itemGenerated);
-        builder("bronze_plate", itemGenerated);
-        builder("copper_plate", itemGenerated);
-        builder("electrum_plate", itemGenerated);
-        builder("iron_plate", itemGenerated);
-        builder("nickel_plate", itemGenerated);
-        builder("platinum_plate", itemGenerated);
-        builder("steel_plate", itemGenerated);
-        builder("tin_plate", itemGenerated);
     }
 
     private ItemModelBuilder builder(String name, ModelFile itemGenerated)
