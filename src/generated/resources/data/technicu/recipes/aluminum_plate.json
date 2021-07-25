@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "technicu:aluminum_ingot"
+    },
+    {
+      "item": "technicu:hammer"
+    }
+  ],
+  "result": {
+    "item": "technicu:aluminum_plate"
+  }
+}
