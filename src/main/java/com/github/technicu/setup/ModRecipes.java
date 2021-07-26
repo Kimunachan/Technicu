@@ -22,7 +22,7 @@ public class ModRecipes
 
     public static  class Serializers
     {
-        public static RegistryObject<IRecipeSerializer<ModSmeltingRecipe>> SMELTING = register("semlting", ModSmeltingRecipe.Serializer::new);
+        public static RegistryObject<IRecipeSerializer<ModSmeltingRecipe>> SMELTING = register("smelting", ModSmeltingRecipe.Serializer::new);
         public static RegistryObject<IRecipeSerializer<ModPressingRecipe>> PRESSING = register("pressing", ModPressingRecipe.Serializer::new);
         public static RegistryObject<IRecipeSerializer<ModChargingRecipe>> CHARGING = register("charging", ModChargingRecipe.Serializer::new);
 

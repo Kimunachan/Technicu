@@ -3,6 +3,7 @@ package com.github.technicu.data;
 import com.github.technicu.Technicu;
 import com.github.technicu.setup.ModBlocks;
 import com.github.technicu.setup.ModItems;
+import com.github.technicu.setup.ModRecipes;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
 import net.minecraft.item.Items;

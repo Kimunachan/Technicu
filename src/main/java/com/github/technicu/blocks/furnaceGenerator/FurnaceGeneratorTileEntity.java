@@ -11,6 +11,7 @@ import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
@@ -23,7 +24,7 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
-public class FurnaceGeneratorTileEntity extends LockableLootTileEntity
+public class FurnaceGeneratorTileEntity extends LockableLootTileEntity implements ITickableTileEntity
 {
     //<editor-fold>
     public static final int WORK_TIME = 400;
@@ -39,17 +40,15 @@ public class FurnaceGeneratorTileEntity extends LockableLootTileEntity
     public FurnaceGeneratorTileEntity() {
         super(ModTileEntityTypes.FURNACE_GENERATOR.get());
     }
-    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,1000,0));
 
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
         if(cap == CapabilityEnergy.ENERGY){
             return energyStorageLazyOptional.cast();
         }
-
         return super.getCapability(cap, side);
     }
-
 
     @Override
     protected void invalidateCaps() {
@@ -99,6 +98,11 @@ public class FurnaceGeneratorTileEntity extends LockableLootTileEntity
         }
 
         return nbt;
+    }
+
+    @Override
+    public void tick() {
+
     }
     //</editor-fold>
 }
