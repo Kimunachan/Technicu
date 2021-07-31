@@ -35,9 +35,9 @@ public class ModTags
         public static final ITag.INamedTag<Item> FENCE_GATE = mod("blocks/fence_gate");
 
         //Items
-        public static final ITag.INamedTag<Item> INGOTS = mod("items/ingots");
-        public static final ITag.INamedTag<Item> RODS = mod("items/rods");
-        public static final ITag.INamedTag<Item> PLATES = mod("items/plates");
+        public static final ITag.INamedTag<Item> INGOTS = forge("items/ingots");
+        public static final ITag.INamedTag<Item> RODS = forge("items/rods");
+        public static final ITag.INamedTag<Item> PLATES = forge("items/plates");
 
         //<editor-fold desc="Magie">
         private static ITag.INamedTag<Item> forge(String path)

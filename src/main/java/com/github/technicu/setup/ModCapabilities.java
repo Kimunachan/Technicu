@@ -20,8 +20,8 @@ import net.minecraftforge.fml.common.Mod;
 public class ModCapabilities {
 
     @SubscribeEvent
-    public static void attachCapabilitiesET(AttachCapabilitiesEvent<TileEntity> event){
-        if(event.getObject() instanceof EnergyPortTileEntity){
+    public static void attachCapabilitiesET(AttachCapabilitiesEvent<TileEntity> event) {
+        if(event.getObject() instanceof EnergyPortTileEntity) {
             EnergyPortTileEntity entity = (EnergyPortTileEntity) event.getObject();
             event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
 

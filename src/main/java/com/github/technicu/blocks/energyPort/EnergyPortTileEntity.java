@@ -24,6 +24,7 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
 {
     //<editor-fold>
     public static final int MAX_ENERGY = 25000;
+
     TranslationTextComponent TITLE = new TranslationTextComponent("container." + Technicu.MOD_ID + ".energy_port");
 
     public EnergyPortTileEntity() {

@@ -53,6 +53,7 @@ public class ModLootTableProvider extends LootTableProvider
             dropSelf(ModBlocks.COPPER_FENCE_GATE.get());
             dropSelf(ModBlocks.ELECTRUM_BLOCK.get());
             dropSelf(ModBlocks.ENERGY_PORT.get());
+            dropSelf(ModBlocks.FLUID_TANK.get());
             dropSelf(ModBlocks.FURNACE_GENERATOR.get());
             dropSelf(ModBlocks.MACHINE_BLOCK.get());
             dropSelf(ModBlocks.MACHINE_CONTROLLER.get());
@@ -66,6 +67,7 @@ public class ModLootTableProvider extends LootTableProvider
             dropSelf(ModBlocks.STEEL_FENCE_GATE.get());
             dropSelf(ModBlocks.TIN_BLOCK.get());
             dropSelf(ModBlocks.TIN_ORE.get());
+            dropSelf(ModBlocks.TRASH_CAN.get());
 
             //dropOther(ModBlocks.MACHINE_BLOCK.get(), ModItems.RUBY.get());
 

@@ -8,6 +8,7 @@ import com.github.technicu.blocks.energyPort.EnergyPortScreen;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorContainer;
 import com.github.technicu.blocks.machineController.MachineControllerContainer;
 import com.github.technicu.blocks.metalPress.MetalPressContainer;
+import com.github.technicu.blocks.trashCan.TrashCanContainer;
 import com.mojang.realmsclient.client.Request;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
@@ -29,6 +30,7 @@ public class ModContainerTypes
     public static final RegistryObject<ContainerType<MetalPressContainer>> METAL_PRESS = register("metal_press", MetalPressContainer::new);
     public static final RegistryObject<ContainerType<FurnaceGeneratorContainer>> FURNACE_GENERATOR = register("furnace_generator", FurnaceGeneratorContainer::new);
     public static final RegistryObject<ContainerType<ChargerContainer>> CHARGER = register("charger", ChargerContainer::new);
+    public static final RegistryObject<ContainerType<TrashCanContainer>> TRASH_CAN = register("trash_can", TrashCanContainer::new);
 
     private static <T extends Container> RegistryObject<ContainerType<T>> register(String name, IContainerFactory<T> factory)
     {

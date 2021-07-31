@@ -6,11 +6,17 @@ import com.github.technicu.recipes.pressing.ModPressingRecipe;
 import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -27,6 +33,8 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 import javax.annotation.Nullable;
 import java.util.Collections;
@@ -34,15 +42,19 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class MetalPressTileEntity extends LockableLootTileEntity
+public class MetalPressTileEntity extends LockableLootTileEntity implements ITickableTileEntity, INamedContainerProvider
 {
-    private static boolean formed;
-
     private int progress = 0;
     public static final int MAX_ENERGY = 25000;
 
+    private IInventory inventory;
+
     public MetalPressTileEntity() {
         super(ModTileEntityTypes.METAL_PRESS.get());
+
+
+
+        this.inventory = this;
     }
 
     LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
@@ -98,17 +110,6 @@ public class MetalPressTileEntity extends LockableLootTileEntity
     void encodeExtraData(PacketBuffer data)
     {
         data.writeByte(fields.getCount());
-    }
-
-    @Nullable
-    public ModPressingRecipe getRecipe()
-    {
-        if (level == null || getItem(0).isEmpty())
-        {
-            return null;
-        }
-
-        return level.getRecipeManager().getRecipeFor(ModRecipes.Types.PRESSING, this, level).orElse(null);
     }
 
     //<editor-fold desc="InventoryStuff">

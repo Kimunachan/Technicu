@@ -29,10 +29,11 @@ public class ModItemModelProvider extends ItemModelProvider
         fenceGateWall("copper_fence_gate_wall",modLoc("block/copper_block"));
         fenceGateWallOpen("copper_fence_gate_wall_open",modLoc("block/copper_block"));
         withExistingParent("electrum_block", modLoc("block/electrum_block"));
-        withExistingParent("energy_port", mcLoc("block/orientable")).texture("side", modLoc("block/energy_port_side")).texture("front", modLoc("block/energy_port_front")).texture("top", modLoc("block/energy_port_top"));;
-        withExistingParent("furnace_generator", mcLoc("block/orientable")).texture("side", modLoc("block/furnace_generator_side")).texture("front", modLoc("block/furnace_generator_front")).texture("top", modLoc("block/furnace_generator_top"));;
+        withExistingParent("energy_port", mcLoc("block/orientable")).texture("side", modLoc("block/energy_port_side")).texture("front", modLoc("block/energy_port_front")).texture("top", modLoc("block/energy_port_top"));
+        withExistingParent("fluid_tank", modLoc("block/fluid_tank"));
+        withExistingParent("furnace_generator", mcLoc("block/orientable")).texture("side", modLoc("block/furnace_generator_side")).texture("front", modLoc("block/furnace_generator_front")).texture("top", modLoc("block/furnace_generator_top"));
         withExistingParent("machine_block", modLoc("block/machine_block"));
-        withExistingParent("machine_controller", mcLoc("block/orientable")).texture("side", modLoc("block/machine_controller_side")).texture("front", modLoc("block/machine_controller_front")).texture("top", modLoc("block/machine_controller_top"));;
+        withExistingParent("machine_controller", mcLoc("block/orientable")).texture("side", modLoc("block/machine_controller_side")).texture("front", modLoc("block/machine_controller_front")).texture("top", modLoc("block/machine_controller_top"));
         withExistingParent("nickel_block", modLoc("block/nickel_block"));
         withExistingParent("nickel_ore", modLoc("block/nickel_ore"));
         withExistingParent("platinum_block", modLoc("block/platinum_block"));

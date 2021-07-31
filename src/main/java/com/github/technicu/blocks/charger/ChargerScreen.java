@@ -63,10 +63,9 @@ public class ChargerScreen extends ContainerScreen<ChargerContainer> {
             current.set(iEnergyStorage.getEnergyStored());
         });
 
-        int pixel = current.get() != 0 ? current.get() * 49 / 25000 : 0;
+        int pixel = current.get() != 0 ? current.get() * 50 / 25000 : 0;
 
-        this.blit(matrixStack, getGuiLeft()+121, getGuiTop()+18+(50-pixel), 176, (50-pixel)+14, 12, 49);
-
+        this.blit(matrixStack, getGuiLeft()+121, getGuiTop()+18+(50-pixel), 176, (50-pixel)+16, 12, 50);
 
     }
 

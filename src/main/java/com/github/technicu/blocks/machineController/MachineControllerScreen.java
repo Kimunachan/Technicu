@@ -66,9 +66,9 @@ public class MachineControllerScreen extends ContainerScreen<MachineControllerCo
             current.set(iEnergyStorage.getEnergyStored());
         });
 
-        int pixel = current.get() != 0 ? current.get() * 49 / 25000 : 0;
+        int pixel = current.get() != 0 ? current.get() * 50 / 25000 : 0;
 
-        this.blit(matrixStack, getGuiLeft()+154, getGuiTop()+18+(50-pixel), 176, (50-pixel)+17, 12, 49);
+        this.blit(matrixStack, getGuiLeft()+154, getGuiTop()+18+(50-pixel), 176, (50-pixel)+17, 12, 50);
     }
 
     @Override

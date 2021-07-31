@@ -1,5 +1,6 @@
 package com.github.technicu.blocks.furnaceGenerator;
 
+import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorTileEntity;
 import com.github.technicu.setup.ModBlocks;
 import com.github.technicu.setup.ModContainerTypes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,31 +20,23 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import java.util.Objects;
 
-public class FurnaceGeneratorContainer extends Container {
-
-    //<editor-fold>
+public class FurnaceGeneratorContainer extends Container
+{
     public final FurnaceGeneratorTileEntity tileEntity;
     private final IWorldPosCallable canInteractWithCallable;
 
-    private IIntArray fields;
-
-    public int getProgressArrowScale() {
-        int progress = fields.get(0);
-
-        if (progress > 0) {
-            return progress * 24 / FurnaceGeneratorTileEntity.WORK_TIME;
-        }
-
-        return 0;
-    }
     public FurnaceGeneratorContainer(final int windowId, final PlayerInventory playerInventory, final FurnaceGeneratorTileEntity tileEntity) {
         super(ModContainerTypes.FURNACE_GENERATOR.get(), windowId);
         this.tileEntity = tileEntity;
         this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
-        //slot,x,y
-
-        this.addSlot(new Slot((IInventory) tileEntity,0,61,36));
+        for(int row = 0; row < 3; row++)
+        {
+            for(int col = 0; col < 5; col++)
+            {
+                this.addSlot(new FurnaceResultSlot(playerInventory.player, tileEntity, col + row * 3 + 5, 62 + col * 18, 18 + row * 18));
+            }
+        }
 
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -78,18 +71,21 @@ public class FurnaceGeneratorContainer extends Container {
     }
 
     @Override
-    public ItemStack quickMoveStack(PlayerEntity playerEntity, int index) {
+    public ItemStack quickMoveStack(PlayerEntity playerEntity, int index)
+    {
+        int slots = CobblestoneGeneratorTileEntity.slots;
+
         ItemStack stack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
         if(slot != null && slot.hasItem()){
             ItemStack stack1 = slot.getItem();
             stack = stack1.copy();
 
-            if (index < 1 && !this.moveItemStackTo(stack1, FurnaceGeneratorTileEntity.slots, this.slots.size(), true)) {
+            if (index < slots && !this.moveItemStackTo(stack1, slots, this.slots.size(), true)) {
                 return ItemStack.EMPTY;
             }
 
-            if(!this.moveItemStackTo(stack1,0,FurnaceGeneratorTileEntity.slots,false)){
+            if(!this.moveItemStackTo(stack1,0,slots,false)){
                 return ItemStack.EMPTY;
             }
 
@@ -105,5 +101,4 @@ public class FurnaceGeneratorContainer extends Container {
     public LazyOptional<IEnergyStorage> getCapabilityFromTE(){
         return this.tileEntity.getCapability(CapabilityEnergy.ENERGY);
     }
-    //</editor-fold>
 }

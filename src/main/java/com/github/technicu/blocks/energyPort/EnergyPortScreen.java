@@ -74,9 +74,9 @@ public class EnergyPortScreen extends ContainerScreen<EnergyPortContainer>
             current.set(iEnergyStorage.getEnergyStored());
         });
 
-        int pixel = current.get() != 0 ? current.get() * 49 / 25000 : 0;
+        int pixel = current.get() != 0 ? current.get() * 50 / 25000 : 0;
 
-        this.blit(matrixStack, getGuiLeft()+44, getGuiTop()+18+(50-pixel), 176, 50-pixel, 12, 49);
+        this.blit(matrixStack, getGuiLeft()+44, getGuiTop()+18+(50-pixel), 176, 50-pixel, 12, 50);
     }
     //</editor-fold>
 }

@@ -8,6 +8,7 @@ import com.github.technicu.blocks.energyPort.EnergyPortScreen;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorScreen;
 import com.github.technicu.blocks.machineController.MachineControllerScreen;
 import com.github.technicu.blocks.metalPress.MetalPressScreen;
+import com.github.technicu.blocks.trashCan.TrashCanScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,5 +27,7 @@ public class ClientSetup {
         ScreenManager.register(ModContainerTypes.METAL_PRESS.get(), MetalPressScreen::new);
         ScreenManager.register(ModContainerTypes.FURNACE_GENERATOR.get(), FurnaceGeneratorScreen::new);
         ScreenManager.register(ModContainerTypes.CHARGER.get(), ChargerScreen::new);
+        ScreenManager.register(ModContainerTypes.TRASH_CAN.get(), TrashCanScreen::new);
     }
+
 }

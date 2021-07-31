@@ -14,6 +14,7 @@ import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
@@ -50,6 +51,8 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
     public static final int WORK_TIME = 400;
     private static boolean formed;
 
+    private IInventory inventory;
+
     public static int slots = 4;
     public static final int MAX_ENERGY = 25000;
 
@@ -58,6 +61,8 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
     private int progress = 0;
     public MachineControllerTileEntity() {
         super(ModTileEntityTypes.MACHINE_CONTROLLER.get());
+
+        this.inventory = this;
     }
 
 
@@ -156,6 +161,7 @@ public class MachineControllerTileEntity extends LockableLootTileEntity implemen
         }
     }
 
+    //<editor-fold>
     private void checkFormed(){
 
         Block opt1l1b01 = level.getBlockState(getBlockPos().below().north().north().north().west()).getBlock();

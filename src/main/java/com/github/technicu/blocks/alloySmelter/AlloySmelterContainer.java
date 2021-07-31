@@ -36,6 +36,7 @@ public class AlloySmelterContainer extends Container {
 
         return 0;
     }
+
     public AlloySmelterContainer(final int windowId, final PlayerInventory playerInventory, final AlloySmelterTileEntity tileEntity) {
         super(ModContainerTypes.ALLOY_SMELTER.get(), windowId);
         this.tileEntity = tileEntity;
@@ -43,9 +44,10 @@ public class AlloySmelterContainer extends Container {
 
         //slot,x,y
 
-        this.addSlot(new Slot((IInventory) tileEntity,0,46,22));
-        this.addSlot(new Slot((IInventory) tileEntity,1,46,49));
-        this.addSlot(new Slot((IInventory) tileEntity,2,116,35));
+        this.addSlot(new Slot(tileEntity,0,46,22));
+        this.addSlot(new Slot(tileEntity,1,46,49));
+        this.addSlot(new FurnaceResultSlot(playerInventory.player, tileEntity, 2, 116, 35));
+//        this.addSlot(new Slot(tileEntity,2,116,35));
 
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -104,6 +106,7 @@ public class AlloySmelterContainer extends Container {
 
         return stack;
     }
+
     public LazyOptional<IEnergyStorage> getCapabilityFromTE(){
         return this.tileEntity.getCapability(CapabilityEnergy.ENERGY);
     }

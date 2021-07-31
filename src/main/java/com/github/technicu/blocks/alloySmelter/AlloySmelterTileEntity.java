@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -17,6 +18,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
@@ -38,12 +40,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class AlloySmelterTileEntity extends LockableLootTileEntity
+public class AlloySmelterTileEntity extends LockableLootTileEntity implements ITickableTileEntity, INamedContainerProvider
 {
     //<editor-fold>
     public static final int WORK_TIME = 400;
 
     public static int slots = 3;
+    private IInventory inventory;
 
     int progress = 0;
     public static final int MAX_ENERGY = 25000;
@@ -53,6 +56,8 @@ public class AlloySmelterTileEntity extends LockableLootTileEntity
     //new EnergyStorage(capacity,maxInput,maxOutput,startingEnergy)
     public AlloySmelterTileEntity() {
         super(ModTileEntityTypes.ALLOY_SMELTER.get());
+
+        this.inventory = this;
     }
 
     LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));

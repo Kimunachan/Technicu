@@ -6,11 +6,19 @@ import com.github.technicu.recipes.charging.ModChargingRecipe;
 import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
@@ -32,12 +40,14 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ChargerTileEntity extends LockableLootTileEntity
+public class ChargerTileEntity extends LockableLootTileEntity implements ITickableTileEntity, INamedContainerProvider
 {
     //<editor-fold>
     public static final int WORK_TIME = 1200;
 
     public static int slots = 1;
+
+    private IInventory inventory;
 
     int progress = 0;
     public static final int MAX_ENERGY = 25000;
@@ -59,7 +69,6 @@ public class ChargerTileEntity extends LockableLootTileEntity
 
         return super.getCapability(cap, side);
     }
-
 
     @Override
     protected void invalidateCaps() {
