@@ -2,13 +2,14 @@ package com.github.technicu.blocks.metalPress;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.capabilities.ModEnergyHandler;
-import com.github.technicu.recipes.ModPressingRecipe;
+import com.github.technicu.recipes.pressing.ModPressingRecipe;
 import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
@@ -19,12 +20,19 @@ import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class MetalPressTileEntity extends LockableLootTileEntity
 {
@@ -55,7 +63,6 @@ public class MetalPressTileEntity extends LockableLootTileEntity
         energyStorageLazyOptional.invalidate();
     }
 
-    //<editor-fold desc="IIntArray">
     private final IIntArray fields = new IIntArray()
     {
         @Override
@@ -87,7 +94,6 @@ public class MetalPressTileEntity extends LockableLootTileEntity
             return 1;
         }
     };
-    //</editor-fold>
 
     void encodeExtraData(PacketBuffer data)
     {
@@ -154,6 +160,85 @@ public class MetalPressTileEntity extends LockableLootTileEntity
         }
 
         return nbt;
+    }
+
+    @Nullable
+    public ModPressingRecipe getRecipe(ItemStack item) {
+        if (level == null || getItem(0).isEmpty()) {
+            return null;
+        }
+
+        Set<IRecipe<?>> recipes = findRecipesByType(ModRecipes.PRESSING_TYPE, this.level);
+
+        for (IRecipe<?> iRecipe : recipes)
+        {
+            ModPressingRecipe recipe = (ModPressingRecipe) iRecipe;
+
+            if (recipe.matches(new RecipeWrapper((IItemHandlerModifiable) this.inventory), this.level))
+            {
+                return recipe;
+            }
+        }
+
+        return null;
+    }
+
+    public static Set<IRecipe<?>> findRecipesByType(IRecipeType<ModPressingRecipe> typeIn, World world)
+    {
+        return world != null ? world.getRecipeManager().getRecipes().stream().filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.EMPTY_SET;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static Set<IRecipe<?>> findRecipesByType(IRecipeType<ModPressingRecipe> typeIn)
+    {
+        ClientWorld world = Minecraft.getInstance().level;
+
+        return world != null ? world.getRecipeManager().getRecipes().stream().filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.EMPTY_SET;
+    }
+
+    public static Set<ItemStack> getAllRecipeInputs(IRecipeType<ModPressingRecipe> typeIn, World world)
+    {
+        Set<ItemStack> inputs = new HashSet<>();
+        Set<IRecipe<?>> recipes = findRecipesByType(typeIn, world);
+
+        for (IRecipe<?> recipe : recipes)
+        {
+            NonNullList<Ingredient> ingredients = recipe.getIngredients();
+
+            ingredients.forEach(ingredient ->
+            {
+                for (ItemStack stack : ingredient.getItems())
+                {
+                    inputs.add(stack);
+                }
+            });
+        }
+
+        return inputs;
+    }
+
+    @Override
+    public void tick()
+    {
+        if (level != null && level.isClientSide())
+        {
+            if (this.getRecipe(inventory.getItem(0)) != null)
+            {
+                if (progress != WORK_TIME)
+                {
+                    progress++;
+                }
+                else
+                {
+                    progress = 0;
+
+                    ItemStack output = getRecipe(this.inventory.getItem(0)).getResultItem();
+
+                    this.inventory.setItem(1, output.copy());
+                    this.inventory.removeItem(0, 1);
+                }
+            }
+        }
     }
     //</editor-fold>
 }

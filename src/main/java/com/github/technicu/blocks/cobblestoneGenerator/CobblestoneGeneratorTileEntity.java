@@ -1,4 +1,4 @@
-package com.github.technicu.blocks.energyPort;
+package com.github.technicu.blocks.cobblestoneGenerator;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.capabilities.ModEnergyHandler;
@@ -18,16 +18,18 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class EnergyPortTileEntity extends LockableTileEntity implements ITickableTileEntity
+public class CobblestoneGeneratorTileEntity extends LockableTileEntity implements ITickableTileEntity
 {
     //<editor-fold>
     public static final int MAX_ENERGY = 25000;
+
+    public static final int slots = 15;
+
     TranslationTextComponent TITLE = new TranslationTextComponent("container." + Technicu.MOD_ID + ".energy_port");
 
-    public EnergyPortTileEntity() {
-        super(ModTileEntityTypes.ENERGY_PORT.get());
+    public CobblestoneGeneratorTileEntity() {
+        super(ModTileEntityTypes.COBBLESTONE_GENERATOR.get());
     }
 
     //<editor-fold desc="LockablePart">
@@ -38,7 +40,7 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
 
     @Override
     protected Container createMenu(int windowId, PlayerInventory playerInventory) {
-        return new EnergyPortContainer(windowId,playerInventory,this);
+        return new CobblestoneGeneratorContainer(windowId,playerInventory,this);
     }
 
     @Override
@@ -80,7 +82,7 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
     public void clearContent() { }
     //</editor-fold>
 
-    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,500,0,0));
 
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
@@ -110,6 +112,8 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
                 iEnergyStorage.receiveEnergy(500,false);
             }
         });
+
+
     }
     //</editor-fold>
 }

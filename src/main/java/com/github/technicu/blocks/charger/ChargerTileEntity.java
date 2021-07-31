@@ -2,7 +2,7 @@ package com.github.technicu.blocks.charger;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.capabilities.ModEnergyHandler;
-import com.github.technicu.recipes.ModChargingRecipe;
+import com.github.technicu.recipes.charging.ModChargingRecipe;
 import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.BlockState;
@@ -16,12 +16,21 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ChargerTileEntity extends LockableLootTileEntity
 {
@@ -59,12 +68,58 @@ public class ChargerTileEntity extends LockableLootTileEntity
     }
 
     @Nullable
-    public ModChargingRecipe getRecipe() {
+    public ModChargingRecipe getRecipe(ItemStack item) {
         if (level == null || getItem(0).isEmpty()) {
             return null;
         }
 
-        return level.getRecipeManager().getRecipeFor(ModRecipes.Types.CHARGING, this, level).orElse(null);
+        Set<IRecipe<?>> recipes = findRecipesByType(ModRecipes.CHARGING_TYPE, this.level);
+
+        for (IRecipe<?> iRecipe : recipes)
+        {
+            ModChargingRecipe recipe = (ModChargingRecipe) iRecipe;
+
+            if (recipe.matches(new RecipeWrapper((IItemHandlerModifiable) this.inventory), this.level))
+            {
+                return recipe;
+            }
+        }
+
+        return null;
+    }
+
+    public static Set<IRecipe<?>> findRecipesByType(IRecipeType<ModChargingRecipe> typeIn, World world)
+    {
+        return world != null ? world.getRecipeManager().getRecipes().stream().filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.EMPTY_SET;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static Set<IRecipe<?>> findRecipesByType(IRecipeType<ModChargingRecipe> typeIn)
+    {
+        ClientWorld world = Minecraft.getInstance().level;
+
+        return world != null ? world.getRecipeManager().getRecipes().stream().filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.EMPTY_SET;
+    }
+
+    public static Set<ItemStack> getAllRecipeInputs(IRecipeType<ModChargingRecipe> typeIn, World world)
+    {
+        Set<ItemStack> inputs = new HashSet<>();
+        Set<IRecipe<?>> recipes = findRecipesByType(typeIn, world);
+
+        for (IRecipe<?> recipe : recipes)
+        {
+            NonNullList<Ingredient> ingredients = recipe.getIngredients();
+
+            ingredients.forEach(ingredient ->
+            {
+                for (ItemStack stack : ingredient.getItems())
+                {
+                    inputs.add(stack);
+                }
+            });
+        }
+
+        return inputs;
     }
 
     @Override
@@ -110,6 +165,11 @@ public class ChargerTileEntity extends LockableLootTileEntity
         }
 
         return nbt;
+    }
+
+    @Override
+    public void tick() {
+
     }
     //</editor-fold>
 }

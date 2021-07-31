@@ -2,8 +2,6 @@ package com.github.technicu.blocks.furnaceGenerator;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.capabilities.ModEnergyHandler;
-import com.github.technicu.recipes.ModSmeltingRecipe;
-import com.github.technicu.setup.ModRecipes;
 import com.github.technicu.setup.ModTileEntityTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
@@ -36,7 +34,6 @@ public class FurnaceGeneratorTileEntity extends LockableLootTileEntity implement
 
     protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
 
-    //new EnergyStorage(capacity,maxInput,maxOutput,startingEnergy)
     public FurnaceGeneratorTileEntity() {
         super(ModTileEntityTypes.FURNACE_GENERATOR.get());
     }

@@ -1,6 +1,7 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.capabilities.ModCapabilities;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
@@ -45,6 +46,8 @@ public class Registration
         ModRecipes.register();
         ModTileEntityTypes.register();
         ModContainerTypes.register();
+
+        ModCapabilities.registerCapabilities();
     }
 
     private static <T extends IForgeRegistryEntry<T>> DeferredRegister<T> create(IForgeRegistry<T> registry)

@@ -47,7 +47,10 @@ public class ModItemModelProvider extends ItemModelProvider
         fenceGateWallOpen("steel_fence_gate_wall_open",modLoc("block/steel_block"));
         withExistingParent("tin_block", modLoc("block/tin_block"));
         withExistingParent("tin_ore", modLoc("block/tin_ore"));
+        withExistingParent("trash_can", modLoc("block/trash_can"));
+
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
+
         builder("aluminum_ingot", itemGenerated);
         builder("bronze_ingot", itemGenerated);
         builder("copper_ingot", itemGenerated);
