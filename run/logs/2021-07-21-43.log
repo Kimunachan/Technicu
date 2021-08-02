@@ -1,0 +1,18 @@
+[21Jul2021 19:38:12.752] [main/INFO] [net.minecraftforge.userdev.ArgumentList/]: Duplicate entries for existing Unindexable
+[21Jul2021 19:38:12.767] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, technicu, --all, --existing, D:\Programmieren\Minecraft\Mods\Technicu\src\main\resources, --existing, D:\Programmieren\Minecraft\Mods\Technicu\src\generated\resources, --output, D:\Programmieren\Minecraft\Mods\Technicu\src\generated\resources, --gameDir, ., --launchTarget, fmluserdevdata, --fml.mcpVersion, 20210115.111550, --fml.mcVersion, 1.16.5, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 36.0.46]
+[21Jul2021 19:38:12.768] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 8.0.9+86+master.3cf110c starting: java version 1.8.0_282 by Amazon.com Inc.
+[21Jul2021 19:38:13.181] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[21Jul2021 19:38:13.225] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/C:/Users/Jonas/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.2/1cf212283d26f706fd3074318870bebd14d2a9ed/mixin-0.8.2.jar Service=ModLauncher Env=UNKNOWN
+[21Jul2021 19:38:14.475] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevdata' with arguments [--gameDir, ., --mod, technicu, --all, --existing, D:\Programmieren\Minecraft\Mods\Technicu\src\main\resources, --existing, D:\Programmieren\Minecraft\Mods\Technicu\src\generated\resources, --output, D:\Programmieren\Minecraft\Mods\Technicu\src\generated\resources]
+[21Jul2021 19:38:14.577] [main/INFO] [net.minecraftforge.fml.DatagenModLoader/]: Initializing Data Gatherer for mods [technicu]
+[21Jul2021 19:38:20.152] [modloading-worker-9/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 36.0.46, for MC 1.16.5 with MCP 20210115.111550
+[21Jul2021 19:38:20.152] [modloading-worker-9/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v36.0.46 Initialized
+[21Jul2021 19:38:20.832] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: technicu
+[21Jul2021 19:38:20.940] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: technicu finished after 106 ms
+[21Jul2021 19:38:20.940] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: technicu
+[21Jul2021 19:38:20.960] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: technicu finished after 19 ms
+[21Jul2021 19:38:20.960] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: LootTables
+[21Jul2021 19:38:21.026] [main/INFO] [net.minecraft.data.DataGenerator/]: LootTables finished after 65 ms
+[21Jul2021 19:38:21.026] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[21Jul2021 19:38:21.073] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 46 ms
+[21Jul2021 19:38:21.073] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 240 ms

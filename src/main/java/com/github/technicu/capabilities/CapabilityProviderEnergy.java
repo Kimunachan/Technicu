@@ -38,7 +38,7 @@ public class CapabilityProviderEnergy implements ICapabilitySerializable<INBT> {
 
     private IEnergyStorage getEnergy() {
         if (modEnergyHandler == null) {
-            modEnergyHandler = new ModEnergyHandler(EnergyPortTileEntity.MAX_ENERGY, 100, 0, 0);
+            modEnergyHandler = new ModEnergyHandler(EnergyPortTileEntity.MAX_ENERGY);
         }
 
         return modEnergyHandler;
