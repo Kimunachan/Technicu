@@ -1,6 +1,8 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.blocks.alloySmelter.AlloySmelterContainer;
+import com.github.technicu.blocks.blockBreaker.BlockBreakerContainer;
+import com.github.technicu.blocks.blockPlacer.BlockPlacerContainer;
 import com.github.technicu.blocks.charger.ChargerContainer;
 import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorContainer;
 import com.github.technicu.blocks.energyPort.EnergyPortContainer;
@@ -9,7 +11,7 @@ import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorContainer;
 import com.github.technicu.blocks.machineController.MachineControllerContainer;
 import com.github.technicu.blocks.metalPress.MetalPressContainer;
 import com.github.technicu.blocks.trashCan.TrashCanContainer;
-import com.mojang.realmsclient.client.Request;
+import com.github.technicu.blocks.waterMill.WaterMillContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.FurnaceContainer;
@@ -31,6 +33,9 @@ public class ModContainerTypes
     public static final RegistryObject<ContainerType<FurnaceGeneratorContainer>> FURNACE_GENERATOR = register("furnace_generator", FurnaceGeneratorContainer::new);
     public static final RegistryObject<ContainerType<ChargerContainer>> CHARGER = register("charger", ChargerContainer::new);
     public static final RegistryObject<ContainerType<TrashCanContainer>> TRASH_CAN = register("trash_can", TrashCanContainer::new);
+    public static final RegistryObject<ContainerType<BlockPlacerContainer>> BLOCK_PLACER = register("block_placer", BlockPlacerContainer::new);
+    public static final RegistryObject<ContainerType<BlockBreakerContainer>> BLOCK_BREAKER = register("block_breaker", BlockBreakerContainer::new);
+    public static final RegistryObject<ContainerType<WaterMillContainer>> WATER_MILL = register("water_mill", WaterMillContainer::new);
 
     private static <T extends Container> RegistryObject<ContainerType<T>> register(String name, IContainerFactory<T> factory)
     {

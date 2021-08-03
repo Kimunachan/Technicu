@@ -71,18 +71,17 @@ public class CobblestoneGeneratorContainer extends Container
 
     @Override
     public ItemStack quickMoveStack(PlayerEntity playerEntity, int index) {
-        int slots = CobblestoneGeneratorTileEntity.slots;
         ItemStack stack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
         if(slot != null && slot.hasItem()){
             ItemStack stack1 = slot.getItem();
             stack = stack1.copy();
 
-            if (index < slots && !this.moveItemStackTo(stack1, slots, this.slots.size(), true)) {
+            if (index < CobblestoneGeneratorTileEntity.slots && !this.moveItemStackTo(stack1, CobblestoneGeneratorTileEntity.slots, this.slots.size(), true)) {
                 return ItemStack.EMPTY;
             }
 
-            if(!this.moveItemStackTo(stack1,0, slots,false)){
+            if(!this.moveItemStackTo(stack1,0, CobblestoneGeneratorTileEntity.slots,false)){
                 return ItemStack.EMPTY;
             }
 

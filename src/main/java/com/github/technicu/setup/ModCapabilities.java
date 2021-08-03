@@ -9,6 +9,7 @@ import com.github.technicu.blocks.fluidTank.FluidTankTileEntity;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import com.github.technicu.blocks.metalPress.MetalPressTileEntity;
+import com.github.technicu.blocks.waterMill.WaterMillTileEntity;
 import com.github.technicu.capabilities.CapabilityProviderEnergy;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -21,33 +22,33 @@ public class ModCapabilities {
 
     @SubscribeEvent
     public static void attachCapabilitiesET(AttachCapabilitiesEvent<TileEntity> event) {
-        if(event.getObject() instanceof EnergyPortTileEntity) {
-            EnergyPortTileEntity entity = (EnergyPortTileEntity) event.getObject();
-            event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
-
-        } else if(event.getObject() instanceof AlloySmelterTileEntity) {
+        if (event.getObject() instanceof AlloySmelterTileEntity) {
             AlloySmelterTileEntity entity = (AlloySmelterTileEntity) event.getObject();
-            event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
+            event.addCapability(new ResourceLocation(Technicu.MOD_ID, "energy"), new CapabilityProviderEnergy());
 
-        } else if(event.getObject() instanceof ChargerTileEntity) {
+        } else if (event.getObject() instanceof ChargerTileEntity) {
             ChargerTileEntity entity = (ChargerTileEntity) event.getObject();
-            event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
+            event.addCapability(new ResourceLocation(Technicu.MOD_ID, "energy"), new CapabilityProviderEnergy());
 
-        } else if(event.getObject() instanceof FurnaceGeneratorTileEntity) {
+        } else if (event.getObject() instanceof FurnaceGeneratorTileEntity) {
             FurnaceGeneratorTileEntity entity = (FurnaceGeneratorTileEntity) event.getObject();
-            event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
+            event.addCapability(new ResourceLocation(Technicu.MOD_ID, "energy"), new CapabilityProviderEnergy());
 
-        } else if(event.getObject() instanceof MachineControllerTileEntity) {
+        } else if (event.getObject() instanceof MachineControllerTileEntity) {
             MachineControllerTileEntity entity = (MachineControllerTileEntity) event.getObject();
-            event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
+            event.addCapability(new ResourceLocation(Technicu.MOD_ID, "energy"), new CapabilityProviderEnergy());
 
-        } else if(event.getObject() instanceof MetalPressTileEntity) {
+        } else if (event.getObject() instanceof MetalPressTileEntity) {
             MetalPressTileEntity entity = (MetalPressTileEntity) event.getObject();
-            event.addCapability(new ResourceLocation(Technicu.MOD_ID,"energy"),new CapabilityProviderEnergy());
+            event.addCapability(new ResourceLocation(Technicu.MOD_ID, "energy"), new CapabilityProviderEnergy());
 
-        } else if(event.getObject() instanceof FluidTankTileEntity) {
+        } else if (event.getObject() instanceof FluidTankTileEntity) {
             FluidTankTileEntity entity = (FluidTankTileEntity) event.getObject();
             //event.addCapability(new ResourceLocation(Technicu.MOD_ID,"fluid"),new ModFluidProvider());
+
+        } else if (event.getObject() instanceof WaterMillTileEntity) {
+            WaterMillTileEntity entity = (WaterMillTileEntity) event.getObject();
+            event.addCapability(new ResourceLocation(Technicu.MOD_ID, "energy"), new CapabilityProviderEnergy());
 
         }
     }

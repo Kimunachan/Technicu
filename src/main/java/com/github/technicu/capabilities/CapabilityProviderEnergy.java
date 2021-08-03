@@ -1,6 +1,5 @@
 package com.github.technicu.capabilities;
 
-import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
@@ -38,7 +37,7 @@ public class CapabilityProviderEnergy implements ICapabilitySerializable<INBT> {
 
     private IEnergyStorage getEnergy() {
         if (modEnergyHandler == null) {
-            modEnergyHandler = new ModEnergyHandler(EnergyPortTileEntity.MAX_ENERGY);
+            modEnergyHandler = new ModEnergyHandler(25000);
         }
 
         return modEnergyHandler;

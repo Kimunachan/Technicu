@@ -1,4 +1,4 @@
-package com.github.technicu.blocks.energyPort;
+package com.github.technicu.blocks.blockBreaker;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.capabilities.ModEnergyHandler;
@@ -8,8 +8,10 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.LockableTileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.capabilities.Capability;
@@ -18,17 +20,20 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class EnergyPortTileEntity extends LockableTileEntity implements ITickableTileEntity
+public class BlockBreakerTileEntity extends LockableLootTileEntity implements ITickableTileEntity
 {
     //<editor-fold>
     public static final int MAX_ENERGY = 25000;
 
-    TranslationTextComponent TITLE = new TranslationTextComponent("container." + Technicu.MOD_ID + ".energy_port");
+    protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
 
-    public EnergyPortTileEntity() {
-        super(ModTileEntityTypes.ENERGY_PORT.get());
+    public static final int slots = 6;
+
+    TranslationTextComponent TITLE = new TranslationTextComponent("container." + Technicu.MOD_ID + ".block_breaker");
+
+    public BlockBreakerTileEntity() {
+        super(ModTileEntityTypes.BLOCK_BREAKER.get());
     }
 
     //<editor-fold desc="LockablePart">
@@ -39,7 +44,7 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
 
     @Override
     protected Container createMenu(int windowId, PlayerInventory playerInventory) {
-        return new EnergyPortContainer(windowId,playerInventory,this);
+        return new BlockBreakerContainer(windowId,playerInventory,this);
     }
 
     @Override
@@ -79,9 +84,19 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
 
     @Override
     public void clearContent() { }
+
+    @Override
+    protected NonNullList<ItemStack> getItems() {
+        return items;
+    }
+
+    @Override
+    protected void setItems(NonNullList<ItemStack> itemsIn) {
+        items = itemsIn;
+    }
     //</editor-fold>
 
-    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,0,0,10000));
+    LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(()-> new ModEnergyHandler(MAX_ENERGY,500,0,0));
 
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
@@ -102,15 +117,7 @@ public class EnergyPortTileEntity extends LockableTileEntity implements ITickabl
     @Override
     public void tick()
     {
-
-
-        this.energyStorageLazyOptional.ifPresent(iEnergyStorage -> {
-
-            if(iEnergyStorage.canReceive())
-            {
-                iEnergyStorage.receiveEnergy(500,false);
-            }
-        });
+        
     }
     //</editor-fold>
 }

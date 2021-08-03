@@ -22,7 +22,7 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
-public class FurnaceGeneratorTileEntity extends LockableLootTileEntity implements ITickableTileEntity
+public class FurnaceGeneratorTileEntity extends LockableLootTileEntity
 {
     //<editor-fold>
     public static final int WORK_TIME = 400;
@@ -95,11 +95,6 @@ public class FurnaceGeneratorTileEntity extends LockableLootTileEntity implement
         }
 
         return nbt;
-    }
-
-    @Override
-    public void tick() {
-
     }
     //</editor-fold>
 }

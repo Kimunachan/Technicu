@@ -6,12 +6,16 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.LockableTileEntity;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
-public class TrashCanTileEntity extends LockableTileEntity implements ITickableTileEntity
+public class TrashCanTileEntity extends LockableLootTileEntity implements ITickableTileEntity
 {
     public static int slots = 1;
+
+    protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
 
     public TrashCanTileEntity() {
         super(ModTileEntityTypes.TRASH_CAN.get());
@@ -31,11 +35,6 @@ public class TrashCanTileEntity extends LockableTileEntity implements ITickableT
     @Override
     public int getContainerSize() {
         return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
     }
 
     @Override
@@ -66,6 +65,16 @@ public class TrashCanTileEntity extends LockableTileEntity implements ITickableT
     @Override
     public void clearContent() {
 
+    }
+
+    @Override
+    protected NonNullList<ItemStack> getItems() {
+        return items;
+    }
+
+    @Override
+    protected void setItems(NonNullList<ItemStack> itemsIn) {
+        items = itemsIn;
     }
 
     @Override

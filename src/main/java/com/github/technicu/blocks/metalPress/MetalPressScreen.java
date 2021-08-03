@@ -1,9 +1,6 @@
 package com.github.technicu.blocks.metalPress;
 
 import com.github.technicu.Technicu;
-import com.github.technicu.blocks.alloySmelter.AlloySmelterContainer;
-import com.github.technicu.blocks.alloySmelter.AlloySmelterTileEntity;
-import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;

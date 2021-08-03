@@ -30,13 +30,7 @@ public class FurnaceGeneratorContainer extends Container
         this.tileEntity = tileEntity;
         this.canInteractWithCallable = IWorldPosCallable.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
-        for(int row = 0; row < 3; row++)
-        {
-            for(int col = 0; col < 5; col++)
-            {
-                this.addSlot(new FurnaceResultSlot(playerInventory.player, tileEntity, col + row * 3 + 5, 62 + col * 18, 18 + row * 18));
-            }
-        }
+        this.addSlot(new Slot(tileEntity, 0, 61, 36));
 
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -73,19 +67,17 @@ public class FurnaceGeneratorContainer extends Container
     @Override
     public ItemStack quickMoveStack(PlayerEntity playerEntity, int index)
     {
-        int slots = CobblestoneGeneratorTileEntity.slots;
-
         ItemStack stack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
         if(slot != null && slot.hasItem()){
             ItemStack stack1 = slot.getItem();
             stack = stack1.copy();
 
-            if (index < slots && !this.moveItemStackTo(stack1, slots, this.slots.size(), true)) {
+            if (index < FurnaceGeneratorTileEntity.slots && !this.moveItemStackTo(stack1, FurnaceGeneratorTileEntity.slots, this.slots.size(), true)) {
                 return ItemStack.EMPTY;
             }
 
-            if(!this.moveItemStackTo(stack1,0,slots,false)){
+            if(!this.moveItemStackTo(stack1,0,FurnaceGeneratorTileEntity.slots,false)){
                 return ItemStack.EMPTY;
             }
 

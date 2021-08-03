@@ -45,6 +45,8 @@ public class ModLootTableProvider extends LootTableProvider
             dropSelf(ModBlocks.ALLOY_SMELTER.get());
             dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
             dropSelf(ModBlocks.ALUMINUM_ORE.get());
+            dropSelf(ModBlocks.BLOCK_BREAKER.get());
+            dropSelf(ModBlocks.BLOCK_PLACER.get());
             dropSelf(ModBlocks.BRONZE_BLOCK.get());
             dropSelf(ModBlocks.CHARGER.get());
             dropSelf(ModBlocks.COPPER_BLOCK.get());
@@ -68,6 +70,7 @@ public class ModLootTableProvider extends LootTableProvider
             dropSelf(ModBlocks.TIN_BLOCK.get());
             dropSelf(ModBlocks.TIN_ORE.get());
             dropSelf(ModBlocks.TRASH_CAN.get());
+            dropSelf(ModBlocks.WATER_MILL.get());
 
             //dropOther(ModBlocks.MACHINE_BLOCK.get(), ModItems.RUBY.get());
 

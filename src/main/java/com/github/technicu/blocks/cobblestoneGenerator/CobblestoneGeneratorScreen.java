@@ -1,12 +1,14 @@
 package com.github.technicu.blocks.cobblestoneGenerator;
 
 import com.github.technicu.Technicu;
+import com.github.technicu.blocks.alloySmelter.AlloySmelterTileEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -70,6 +72,23 @@ public class CobblestoneGeneratorScreen extends ContainerScreen<CobblestoneGener
         int pixel = current.get() != 0 ? current.get() * 50 / 25000 : 0;
 
         this.blit(matrixStack, getGuiLeft()+10, getGuiTop()+18+(50-pixel), 176, (50-pixel)+16, 12, 50);
+    }
+
+    @Override
+    protected void renderTooltip(MatrixStack matrixStack, int mouseX, int mouseY) {
+        super.renderTooltip(matrixStack, mouseX, mouseY);
+
+        if(mouseX >= getGuiLeft()+10 && mouseX < getGuiLeft()+10+12){
+            if(mouseY >= getGuiTop()+18 && mouseY < getGuiTop()+18+50){
+
+                AtomicInteger current = new AtomicInteger();
+
+                this.container.getCapabilityFromTE().ifPresent(iEnergyStorage -> {
+                    current.set(iEnergyStorage.getEnergyStored());
+                });
+                this.renderTooltip(matrixStack, new StringTextComponent(current.get() + "/"+ AlloySmelterTileEntity.MAX_ENERGY),mouseX,mouseY);
+            }
+        }
     }
     //</editor-fold>
 }

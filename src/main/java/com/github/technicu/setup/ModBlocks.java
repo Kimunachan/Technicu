@@ -1,6 +1,8 @@
 package com.github.technicu.setup;
 
 import com.github.technicu.blocks.alloySmelter.AlloySmelterBlock;
+import com.github.technicu.blocks.blockBreaker.BlockBreakerBlock;
+import com.github.technicu.blocks.blockPlacer.BlockPlacerBlock;
 import com.github.technicu.blocks.charger.ChargerBlock;
 import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorBlock;
 import com.github.technicu.blocks.energyPort.EnergyPortBlock;
@@ -11,6 +13,7 @@ import com.github.technicu.blocks.machineController.MachineControllerBlock;
 import com.github.technicu.blocks.metalPress.MetalPressBlock;
 import com.github.technicu.blocks.fences.SteelFenceBlock;
 import com.github.technicu.blocks.trashCan.TrashCanBlock;
+import com.github.technicu.blocks.waterMill.WaterMillBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -29,6 +32,8 @@ public class ModBlocks extends Blocks
     public static final RegistryObject<AlloySmelterBlock> ALLOY_SMELTER = register("alloy_smelter", () -> new AlloySmelterBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> ALUMINUM_BLOCK = register("aluminum_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> ALUMINUM_ORE = register("aluminum_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<BlockBreakerBlock> BLOCK_BREAKER = register("block_breaker", () -> new BlockBreakerBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<BlockPlacerBlock> BLOCK_PLACER = register("block_placer", () -> new BlockPlacerBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> BRONZE_BLOCK = register("bronze_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<ChargerBlock> CHARGER = register("charger", () -> new ChargerBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<CobblestoneGeneratorBlock> COBBLESTONE_GENERATOR = register("cobblestone_generator", () -> new CobblestoneGeneratorBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
@@ -53,6 +58,7 @@ public class ModBlocks extends Blocks
     public static final RegistryObject<Block> TIN_BLOCK = register("tin_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> TIN_ORE = register("tin_ore", () -> new Block(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<TrashCanBlock> TRASH_CAN = register("trash_can", () -> new TrashCanBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+    public static final RegistryObject<WaterMillBlock> WATER_MILL = register("water_mill", () -> new WaterMillBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
     static void register() {
     }

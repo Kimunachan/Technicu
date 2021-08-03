@@ -2,6 +2,8 @@ package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.alloySmelter.AlloySmelterTileEntity;
+import com.github.technicu.blocks.blockBreaker.BlockBreakerTileEntity;
+import com.github.technicu.blocks.blockPlacer.BlockPlacerTileEntity;
 import com.github.technicu.blocks.charger.ChargerTileEntity;
 import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorTileEntity;
 import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
@@ -9,7 +11,7 @@ import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import com.github.technicu.blocks.metalPress.MetalPressTileEntity;
 import com.github.technicu.blocks.trashCan.TrashCanTileEntity;
-import com.mojang.realmsclient.client.Request;
+import com.github.technicu.blocks.waterMill.WaterMillTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -32,6 +34,10 @@ public class ModTileEntityTypes {
     public static final RegistryObject<TileEntityType<FurnaceGeneratorTileEntity>> FURNACE_GENERATOR = register("furnace_generator", FurnaceGeneratorTileEntity::new, ModBlocks.FURNACE_GENERATOR);
     public static final RegistryObject<TileEntityType<ChargerTileEntity>> CHARGER = register("charger", ChargerTileEntity::new, ModBlocks.FURNACE_GENERATOR);
     public static final RegistryObject<TileEntityType<TrashCanTileEntity>> TRASH_CAN = register("trash_can", TrashCanTileEntity::new, ModBlocks.TRASH_CAN);
+    public static final RegistryObject<TileEntityType<BlockPlacerTileEntity>> BLOCK_PLACER = register("block_placer", BlockPlacerTileEntity::new, ModBlocks.BLOCK_PLACER);
+    public static final RegistryObject<TileEntityType<BlockBreakerTileEntity>> BLOCK_BREAKER = register("block_breaker", BlockBreakerTileEntity::new, ModBlocks.BLOCK_BREAKER);
+    public static final RegistryObject<TileEntityType<WaterMillTileEntity>> WATER_MILL = register("water_mill", WaterMillTileEntity::new, ModBlocks.WATER_MILL);
+    public static final RegistryObject<TileEntityType<FluidTankTileEntity>> FLUID_TANK = register("fluid_tank", FluidTankTileEntity::new, ModBlocks.FLUID_TANK);
 
     static void register() {
     }

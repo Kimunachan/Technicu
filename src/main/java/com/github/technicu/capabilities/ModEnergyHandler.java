@@ -20,6 +20,10 @@ public class ModEnergyHandler extends EnergyStorage {
         super(capacity, maxReceive, maxExtract, energy);
     }
 
+    public ModEnergyHandler() {
+        super(0);
+    }
+
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
         return super.receiveEnergy(maxReceive, simulate);
@@ -49,4 +53,6 @@ public class ModEnergyHandler extends EnergyStorage {
     public boolean canReceive() {
         return super.canReceive();
     }
+
+
 }

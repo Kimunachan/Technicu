@@ -2,6 +2,8 @@ package com.github.technicu.setup;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.alloySmelter.AlloySmelterScreen;
+import com.github.technicu.blocks.blockBreaker.BlockBreakerScreen;
+import com.github.technicu.blocks.blockPlacer.BlockPlacerScreen;
 import com.github.technicu.blocks.charger.ChargerScreen;
 import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorScreen;
 import com.github.technicu.blocks.energyPort.EnergyPortScreen;
@@ -9,6 +11,7 @@ import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorScreen;
 import com.github.technicu.blocks.machineController.MachineControllerScreen;
 import com.github.technicu.blocks.metalPress.MetalPressScreen;
 import com.github.technicu.blocks.trashCan.TrashCanScreen;
+import com.github.technicu.blocks.waterMill.WaterMillScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,6 +31,9 @@ public class ClientSetup {
         ScreenManager.register(ModContainerTypes.FURNACE_GENERATOR.get(), FurnaceGeneratorScreen::new);
         ScreenManager.register(ModContainerTypes.CHARGER.get(), ChargerScreen::new);
         ScreenManager.register(ModContainerTypes.TRASH_CAN.get(), TrashCanScreen::new);
+        ScreenManager.register(ModContainerTypes.BLOCK_PLACER.get(), BlockPlacerScreen::new);
+        ScreenManager.register(ModContainerTypes.BLOCK_BREAKER.get(), BlockBreakerScreen::new);
+        ScreenManager.register(ModContainerTypes.WATER_MILL.get(), WaterMillScreen::new);
     }
 
 }
