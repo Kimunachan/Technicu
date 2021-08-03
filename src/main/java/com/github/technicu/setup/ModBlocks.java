@@ -5,7 +5,6 @@ import com.github.technicu.blocks.blockBreaker.BlockBreakerBlock;
 import com.github.technicu.blocks.blockPlacer.BlockPlacerBlock;
 import com.github.technicu.blocks.charger.ChargerBlock;
 import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorBlock;
-import com.github.technicu.blocks.energyPort.EnergyPortBlock;
 import com.github.technicu.blocks.fences.CopperFenceBlock;
 import com.github.technicu.blocks.fluidTank.FluidTankBlock;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorBlock;
@@ -42,7 +41,6 @@ public class ModBlocks extends Blocks
     public static final RegistryObject<CopperFenceBlock> COPPER_FENCE = register("copper_fence", () -> new CopperFenceBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<FenceGateBlock> COPPER_FENCE_GATE = register("copper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> ELECTRUM_BLOCK = register("electrum_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
-    public static final RegistryObject<EnergyPortBlock> ENERGY_PORT = register("energy_port", () -> new EnergyPortBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<FurnaceGeneratorBlock> FURNACE_GENERATOR = register("furnace_generator", () -> new FurnaceGeneratorBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<FluidTankBlock> FLUID_TANK = register("fluid_tank", () -> new FluidTankBlock(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
     public static final RegistryObject<Block> MACHINE_BLOCK = register("machine_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3, 10).harvestTool(ToolType.PICKAXE).harvestLevel(2)));

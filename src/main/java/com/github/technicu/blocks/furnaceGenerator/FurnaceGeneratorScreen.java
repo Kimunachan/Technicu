@@ -66,7 +66,7 @@ public class FurnaceGeneratorScreen extends ContainerScreen<FurnaceGeneratorCont
 
         int pixel = current.get() != 0 ? current.get() * 50 / 25000 : 0;
 
-        this.blit(matrixStack, getGuiLeft()+121, getGuiTop()+18+(50-pixel), 176, (50-pixel)+14, 12, 50);
+        this.blit(matrixStack, getGuiLeft()+121, getGuiTop()+(50-pixel), 176, (50-pixel)+14, 12, 50);
     }
 
     @Override

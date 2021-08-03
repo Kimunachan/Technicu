@@ -4,7 +4,6 @@ package com.github.technicu.setup;
 import com.github.technicu.Technicu;
 import com.github.technicu.blocks.alloySmelter.AlloySmelterTileEntity;
 import com.github.technicu.blocks.charger.ChargerTileEntity;
-import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
 import com.github.technicu.blocks.fluidTank.FluidTankTileEntity;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;

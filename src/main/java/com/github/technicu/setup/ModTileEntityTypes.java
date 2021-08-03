@@ -6,7 +6,7 @@ import com.github.technicu.blocks.blockBreaker.BlockBreakerTileEntity;
 import com.github.technicu.blocks.blockPlacer.BlockPlacerTileEntity;
 import com.github.technicu.blocks.charger.ChargerTileEntity;
 import com.github.technicu.blocks.cobblestoneGenerator.CobblestoneGeneratorTileEntity;
-import com.github.technicu.blocks.energyPort.EnergyPortTileEntity;
+import com.github.technicu.blocks.fluidTank.FluidTankTileEntity;
 import com.github.technicu.blocks.furnaceGenerator.FurnaceGeneratorTileEntity;
 import com.github.technicu.blocks.machineController.MachineControllerTileEntity;
 import com.github.technicu.blocks.metalPress.MetalPressTileEntity;
@@ -27,7 +27,6 @@ public class ModTileEntityTypes {
     //-------------------------
 
     public static final RegistryObject<TileEntityType<MachineControllerTileEntity>> MACHINE_CONTROLLER = register("machine_controller", MachineControllerTileEntity::new, ModBlocks.MACHINE_CONTROLLER);
-    public static final RegistryObject<TileEntityType<EnergyPortTileEntity>> ENERGY_PORT = register("energy_port", EnergyPortTileEntity::new, ModBlocks.ENERGY_PORT);
     public static final RegistryObject<TileEntityType<AlloySmelterTileEntity>> ALLOY_SMELTER = register("alloy_smelter", AlloySmelterTileEntity::new, ModBlocks.ALLOY_SMELTER);
     public static final RegistryObject<TileEntityType<CobblestoneGeneratorTileEntity>> COBBLESTONE_GENERATOR = register("cobblestone_generator", CobblestoneGeneratorTileEntity::new, ModBlocks.COBBLESTONE_GENERATOR);
     public static final RegistryObject<TileEntityType<MetalPressTileEntity>> METAL_PRESS = register("metal_press", MetalPressTileEntity::new, ModBlocks.METAL_PRESS);

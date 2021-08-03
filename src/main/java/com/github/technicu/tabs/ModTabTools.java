@@ -2,6 +2,7 @@ package com.github.technicu.tabs;
 
 import com.github.technicu.Technicu;
 import com.github.technicu.setup.ModBlocks;
+import com.github.technicu.setup.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -15,6 +16,6 @@ public class ModTabTools extends ItemGroup
     @Override
     public ItemStack makeIcon()
     {
-        return ModBlocks.MACHINE_BLOCK.get().asItem().getDefaultInstance();
+        return ModItems.HAMMER.get().asItem().getDefaultInstance();
     }
 }

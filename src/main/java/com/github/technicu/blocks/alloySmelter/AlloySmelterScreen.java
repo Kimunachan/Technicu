@@ -65,7 +65,7 @@ public class AlloySmelterScreen extends ContainerScreen<AlloySmelterContainer> {
 
         int pixel = current.get() != 0 ? current.get() * 50 / 25000 : 0;
 
-        this.blit(matrixStack, getGuiLeft()+154, getGuiTop()+18+(50-pixel), 176, (50-pixel)+17, 12, 50);
+        this.blit(matrixStack, getGuiLeft()+154, getGuiTop()+(50-pixel), 176, (50-pixel)+17, 12, 50);
 
 
     }

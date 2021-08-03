@@ -39,9 +39,9 @@
   "item.technicu.electrum_ingot": "Electrum Ingot",
   "item.technicu.electrum_rod": "Electrum Rod",
   "item.technicu.electrum_plate": "Electrum Plate",
-  "block.technicu.energy_port": "Energy Port",
-  "container.technicu.energy_port": "Energy Port",
   "item.technicu.redstone_crystal": "Redstone Crystal",
+  "block.technicu.fluid_tank": "Fluid Tank",
+  "container.technicu.fluid_tank": "Fluid Tank",
   "block.technicu.furnace_generator": "Furnace Generator",
   "container.technicu.furnace_generator": "Furnace Generator",
   "item.technicu.hammer": "Hammer",
@@ -68,5 +68,9 @@
   "item.technicu.tin_ingot": "Tin Ingot",
   "block.technicu.tin_ore": "Tin Ore",
   "item.technicu.tin_plate": "Tin Plate",
-  "item.technicu.tin_rod": "Tin Rod"
+  "item.technicu.tin_rod": "Tin Rod",
+  "block.technicu.trash_can": "Trash Can",
+  "container.technicu.trash_can": "Trash Can",
+  "block.technicu.water_mill": "Water Mill",
+  "container.technicu.water_mill": "Water Mill"
 }

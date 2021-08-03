@@ -15,7 +15,7 @@ public class FluidTankTileEntity extends TileEntity {
     public static final int MAX_CAPACITY = 10000;
 
     public FluidTankTileEntity() {
-        super(ModTileEntityTypes.ENERGY_PORT.get());
+        super(ModTileEntityTypes.FLUID_TANK.get());
     }
 
     LazyOptional<IFluidHandler> fluidHandlerLazyOptional = LazyOptional.of(() -> new FluidTank(MAX_CAPACITY));

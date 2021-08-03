@@ -54,7 +54,6 @@ public class ModLootTableProvider extends LootTableProvider
             dropSelf(ModBlocks.COPPER_FENCE.get());
             dropSelf(ModBlocks.COPPER_FENCE_GATE.get());
             dropSelf(ModBlocks.ELECTRUM_BLOCK.get());
-            dropSelf(ModBlocks.ENERGY_PORT.get());
             dropSelf(ModBlocks.FLUID_TANK.get());
             dropSelf(ModBlocks.FURNACE_GENERATOR.get());
             dropSelf(ModBlocks.MACHINE_BLOCK.get());

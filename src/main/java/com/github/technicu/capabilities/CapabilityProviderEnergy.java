@@ -27,7 +27,8 @@ public class CapabilityProviderEnergy implements ICapabilitySerializable<INBT> {
 
     @Override
     public INBT serializeNBT() {
-        return CapabilityEnergy.ENERGY.writeNBT(getEnergy(), null);
+        return this.
+//        return CapabilityEnergy.ENERGY.writeNBT(getEnergy(), null);
     }
 
     @Override

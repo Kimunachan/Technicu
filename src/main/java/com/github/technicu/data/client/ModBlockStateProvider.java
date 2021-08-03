@@ -25,7 +25,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(ModBlocks.COPPER_FENCE_GATE.get(), modLoc("block/copper_block"));
         simpleBlock(ModBlocks.COPPER_ORE.get());
         simpleBlock(ModBlocks.ELECTRUM_BLOCK.get());
-        horizontalBlock(ModBlocks.ENERGY_PORT.get(), modLoc("block/energy_port_side"), modLoc("block/energy_port_front"), modLoc("block/energy_port_top"));
 //        simpleBlock(ModBlocks.FLUID_TANK.get());
         horizontalBlock(ModBlocks.FURNACE_GENERATOR.get(), modLoc("block/furnace_generator_side"), modLoc("block/furnace_generator_front"), modLoc("block/furnace_generator_top"));
         simpleBlock(ModBlocks.MACHINE_BLOCK.get());

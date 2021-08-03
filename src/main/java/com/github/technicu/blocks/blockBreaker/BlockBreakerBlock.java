@@ -1,5 +1,4 @@
-package com.github.technicu.blocks.energyPort;
-
+package com.github.technicu.blocks.blockBreaker;
 
 import com.github.technicu.blocks.ModBlockStateProperties;
 import net.minecraft.block.Block;
@@ -7,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
@@ -21,12 +19,12 @@ import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
 
-public class EnergyPortBlock extends Block
+public class BlockBreakerBlock extends Block
 {
     //<editor-fold>
     private static final DirectionProperty FACING = ModBlockStateProperties.FACING_HORIZONTAL;
 
-    public EnergyPortBlock(Properties properties)
+    public BlockBreakerBlock(Properties properties)
     {
         super(properties);
         this.registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -35,7 +33,7 @@ public class EnergyPortBlock extends Block
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new EnergyPortTileEntity();
+        return new BlockBreakerTileEntity();
     }
 
     @Override
@@ -50,9 +48,9 @@ public class EnergyPortBlock extends Block
         if (!world.isClientSide())
         {
             TileEntity tileEntity = world.getBlockEntity(pos);
-            if (tileEntity instanceof EnergyPortTileEntity)
+            if (tileEntity instanceof BlockBreakerTileEntity)
             {
-                NetworkHooks.openGui((ServerPlayerEntity) player, (EnergyPortTileEntity) tileEntity, pos);
+                NetworkHooks.openGui((ServerPlayerEntity) player, (BlockBreakerTileEntity) tileEntity, pos);
                 System.out.println(tileEntity.getCapability(CapabilityEnergy.ENERGY).orElseThrow(() -> new NullPointerException("The mod Capability<IEnergyStorage> is null")));
                 return ActionResultType.SUCCESS;
             }
